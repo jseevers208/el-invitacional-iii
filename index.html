@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EL INVITACIONAL III — Padel Parranda & Wellness Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --court: #0E4F47;
+  --court-deep: #08332D;
+  --coral: #FF5A3C;
+  --coral-deep: #C73D1F;
+  --cream: #F5EDE0;
+  --cream-light: #FBF6EC;
+  --ink: #0F0F12;
+  --gold: #C9A55E;
+  --champagne: #E8D8B8;
+  --line: rgba(15,15,18,0.12);
+  --line-light: rgba(245,237,224,0.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ============ TYPOGRAPHY ============ */
+.display {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.editorial {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1, h2, h3 { font-family: 'Anton', sans-serif; font-weight: 400; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.005em; }
+
+p { font-size: 1.02rem; line-height: 1.65; }
+
+/* ============ LAYOUT ============ */
+section {
+  padding: 6.5rem 6vw;
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.lede {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 50ch;
+  color: var(--ink);
+}
+
+/* ============ HERO ============ */
+.hero {
+  background: var(--ink);
+  color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 6vw 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 80% 40%, rgba(255,90,60,0.18), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(14,79,71,0.35), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-top .mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.hero-top .pill {
+  border: 1px solid var(--cream);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero-main {
+  position: relative;
+  z-index: 2;
+  margin: auto 0;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: var(--coral);
+}
+
+.hero h1 {
+  font-size: clamp(4rem, 14vw, 13rem);
+  line-height: 0.85;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 .roman {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--coral);
+  text-transform: none;
+  font-size: 0.6em;
+  vertical-align: super;
+  margin-left: 0.2em;
+}
+
+.hero h1 .word2 { display: block; color: var(--gold); }
+.hero h1 .word3 { display: block; }
+
+.hero-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+  max-width: 50ch;
+  margin-top: 2rem;
+  color: rgba(245,237,224,0.85);
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--line-light);
+  padding-top: 2rem;
+}
+
+.hero-meta .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.55);
+  margin-bottom: 0.5rem;
+}
+
+.hero-meta .value {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+/* ============ MARQUEE ============ */
+.marquee {
+  background: var(--ink);
+  color: var(--cream);
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+  padding: 1.6rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: scroll 35s linear infinite;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.marquee-track span { padding: 0 1.5rem; }
+.marquee-track .dot { color: var(--coral); }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============ SECTION HEADERS ============ */
+.section-head {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--coral);
+  padding-top: 0.3rem;
+  border-top: 2px solid var(--coral);
+}
+
+.section-title h2 {
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  margin-bottom: 1.5rem;
+}
+
+.section-title .editorial {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--court-deep);
+  max-width: 55ch;
+}
+
+/* ============ EXEC SUMMARY ============ */
+.exec {
+  background: var(--cream);
+  position: relative;
+}
+
+.exec::before {
+  content: 'III';
+  position: absolute;
+  top: 4rem;
+  right: 6vw;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 18rem;
+  line-height: 1;
+  color: var(--coral);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.exec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.exec-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.stat {
+  background: var(--cream);
+  padding: 2rem 1.8rem;
+}
+
+.stat .num {
+  font-family: 'Anton', sans-serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  color: var(--court);
+  display: block;
+}
+
+.stat .num .small { font-size: 0.5em; color: var(--coral); }
+
+.stat .lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15,15,18,0.65);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.exec-prose p { margin-bottom: 1.2rem; }
+.exec-prose strong { color: var(--court-deep); }
+
+.callout {
+  margin-top: 1.5rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 2rem;
+  border-left: 4px solid var(--coral);
+}
+
+.callout .quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.callout .attrib {
+  margin-top: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ============ FORMATS — TWO OPTIONS ============ */
+.formats {
+  background: var(--court);
+  color: var(--cream);
+}
+
+.formats .section-num { color: var(--coral); border-top-color: var(--coral); }
+.formats .section-title h2 { color: var(--cream); }
+.formats .section-title .editorial { color: var(--champagne); }
+
+.fmt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid var(--line-light);
+}
+
+.fmt {
+  padding: 3rem 2.5rem;
+  position: relative;
+}
+
+.fmt + .fmt { border-left: 1px solid var(--line-light); }
+
+.fmt .badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  background: var(--coral);
+  color: var(--ink);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.fmt h3 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.fmt .name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.fmt .descr {
+  font-size: 0.98rem;
+  color: rgba(245,237,224,0.85);
+  margin-bottom: 2rem;
+}
+
+.fmt-table {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.92rem;
+}
+
+.fmt-table dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 0.15rem;
+}
+
+.fmt-table dd { color: rgba(245,237,224,0.92); }
+
+.fmt .pros, .fmt .cons {
+  margin-top: 1.5rem;
+}
+
+.fmt .pros .label, .fmt .cons .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+.fmt .pros .label { color: #6FE3A8; }
+.fmt .cons .label { color: #FFB86B; }
+
+.fmt ul {
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+.fmt ul li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: rgba(245,237,224,0.88);
+}
+
+.fmt ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--coral);
+}
+
+/* ============ HYBRID RECOMMENDATION ============ */
+.hybrid {
+  background: var(--cream);
+}
+
+.hybrid .recommendation {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.hybrid-pillar {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 3rem 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.hybrid-pillar h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--coral);
+}
+
+.hybrid-pillar p {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--champagne);
+}
+
+.hybrid-rules { padding-top: 0; }
+.hybrid-rules h3 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  color: var(--court-deep);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+}
+.hybrid-rules h3:first-child { margin-top: 0; }
+.hybrid-rules p { margin-bottom: 1rem; }
+.hybrid-rules ul { list-style: none; padding-left: 0; }
+.hybrid-rules ul li {
+  padding-left: 1.6rem;
+  position: relative;
+  margin-bottom: 0.6rem;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.hybrid-rules ul li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--coral);
+  font-size: 0.7em;
+  top: 0.55em;
+}
+.hybrid-rules strong { color: var(--court-deep); }
+
+/* ============ TIMELINE / RUN OF SHOW ============ */
+.timeline {
+  background: var(--ink);
+  color: var(--cream);
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+
+.timeline .section-title h2 { color: var(--cream); }
+.timeline .section-title .editorial { color: var(--champagne); }
+.timeline .section-num { color: var(--coral); border-top-color: var(--coral); }
+
+.tl-block {
+  margin-bottom: 4rem;
+}
+
+.tl-block-head {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line-light);
+  padding-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tl-block-head .where {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: rgba(232,216,184,0.6);
+  text-transform: none;
+}
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 2fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px dashed var(--line-light);
+  align-items: start;
+}
+
+.tl-row:last-child { border-bottom: none; }
+
+.tl-time {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  color: var(--coral);
+}
+
+.tl-name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+}
+
+.tl-name .sub {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-top: 0.3rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.tl-detail {
+  font-size: 0.92rem;
+  color: rgba(245,237,224,0.8);
+}
+
+.tl-detail .tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--line-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.4rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.tag.onvo { color: #93B5FF; border-color: #93B5FF; }
+.tag.praga { color: #FF95B5; border-color: #FF95B5; }
+.tag.raw { color: #FF6B6B; border-color: #FF6B6B; }
+.tag.reserva { color: #6FE3A8; border-color: #6FE3A8; }
+.tag.heineken { color: #80D87A; border-color: #80D87A; }
+.tag.adan { color: #FFB86B; border-color: #FFB86B; }
+
+/* ============ ACTIVATIONS GRID ============ */
+.activations {
+  background: var(--cream);
+}
+
+.act-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.act {
+  border: 1px solid var(--line);
+  background: var(--cream-light);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.act::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+
+.act.onvo::before { background: #091558; }
+.act.praga::before { background: var(--ink); }
+.act.raw::before { background: #DC2626; }
+.act.reserva::before { background: var(--court); }
+.act.heineken::before { background: #00A859; }
+.act.adan::before { background: var(--coral); }
+
+.act .brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: rgba(15,15,18,0.6);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.act h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.act p { font-size: 0.95rem; margin-bottom: 0.8rem; }
+
+.act .roi {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--court-deep);
+}
+
+/* ============ TEAMS / CAPITANES ============ */
+.teams {
+  background: var(--court-deep);
+  color: var(--cream);
+}
+
+.teams .section-num { color: var(--coral); border-top-color: var(--coral); }
+.teams .section-title h2 { color: var(--cream); }
+.teams .section-title .editorial { color: var(--champagne); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.team {
+  border: 1px solid var(--line-light);
+  padding: 2rem 1.5rem;
+  position: relative;
+  background: rgba(245,237,224,0.04);
+}
+
+.team .num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--coral);
+  margin-bottom: 0.5rem;
+}
+
+.team .name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.team .color-bar {
+  width: 60%;
+  height: 6px;
+  margin-bottom: 1rem;
+}
+
+.team.onvo .color-bar { background: #1126C6; }
+.team.praga .color-bar { background: var(--ink); border: 1px solid var(--cream); }
+.team.raw .color-bar { background: #DC2626; }
+.team.reserva .color-bar { background: #4ECB71; }
+
+.team .vibe {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.team .roster-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(245,237,224,0.6);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.team .roster {
+  font-size: 0.88rem;
+  color: rgba(245,237,224,0.85);
+  line-height: 1.5;
+}
+
+/* ============ LANDING / RSVP ============ */
+.landing {
+  background: var(--cream);
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.landing-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--court-deep);
+}
+
+.wireframe {
+  border: 1.5px dashed var(--court);
+  padding: 1.5rem;
+  background: var(--cream-light);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--court-deep);
+  white-space: pre-wrap;
+}
+
+.field-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.field-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.92rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.field-list li .field-name { font-weight: 600; }
+
+.field-list li .field-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--coral);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ============ OPS CHECKLIST ============ */
+.ops {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.ops .section-title h2 { color: var(--cream); }
+.ops .section-title .editorial { color: var(--champagne); }
+.ops .section-num { color: var(--coral); border-top-color: var(--coral); }
+
+.ops-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.ops-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--coral);
+  border-bottom: 1px solid var(--line-light);
+  padding-bottom: 0.5rem;
+}
+
+.checklist {
+  list-style: none;
+}
+
+.checklist li {
+  padding: 0.7rem 0 0.7rem 2.2rem;
+  border-bottom: 1px dashed var(--line-light);
+  position: relative;
+  font-size: 0.94rem;
+  color: rgba(245,237,224,0.9);
+}
+
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--gold);
+  border-radius: 3px;
+}
+
+.checklist li strong { color: var(--cream); font-weight: 600; }
+
+.decisions {
+  margin-top: 2rem;
+  background: rgba(255,90,60,0.08);
+  border-left: 3px solid var(--coral);
+  padding: 1.5rem 1.5rem 1.5rem 1.7rem;
+}
+
+.decisions h4 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  color: var(--coral);
+}
+
+.decisions ol {
+  list-style: none;
+  counter-reset: dec;
+  font-size: 0.92rem;
+}
+
+.decisions ol li {
+  counter-increment: dec;
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+
+.decisions ol li::before {
+  content: counter(dec, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--coral);
+  font-weight: 700;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 3rem 6vw 2.5rem;
+  border-top: 1px solid var(--line-light);
+  text-align: center;
+}
+
+.footer .badge-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.footer .b {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--line-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.footer .closing {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.footer .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(245,237,224,0.5);
+  text-transform: uppercase;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  section { padding: 4rem 6vw; }
+  .hero-bottom { grid-template-columns: 1fr 1fr; }
+  .exec-grid, .fmt-grid, .act-grid, .landing-grid, .ops-grid, .hybrid .recommendation, .team-grid { grid-template-columns: 1fr; }
+  .fmt + .fmt { border-left: none; border-top: 1px solid var(--line-light); }
+  .tl-row { grid-template-columns: 80px 1fr; }
+  .tl-row .tl-detail { grid-column: 1 / -1; }
+  .section-head { grid-template-columns: 1fr; gap: 1rem; }
+  .hybrid-pillar { position: relative; top: 0; }
+  .team-grid { gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-top">
+    <span class="mark">El Invitacional <em>—</em> Tercera Edición</span>
+    <span class="pill">30 · MAYO · 2026</span>
+  </div>
+
+  <div class="hero-main">
+    <div class="hero-eyebrow">Padel Parranda &nbsp;<span style="color:var(--gold)">·</span>&nbsp; Wellness Day</div>
+    <h1 class="display">
+      <span>El</span>
+      <span class="word2">Invitacional</span>
+      <span class="word3">III<span class="roman" style="color:var(--coral); font-style:italic; text-transform:none; font-size:0.5em;"> ·</span></span>
+    </h1>
+    <p class="hero-sub">
+      La mejor parranda de pádel que ha visto Centroamérica.
+      Seis canchas, cuatro marcas, una tarde de sol, day-drinks, Top DJ's, al derecho y al revés. Desde las 2 de la tarde hasta que se apaguen las luces.
+    </p>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-meta">
+      <div class="label">Venue</div>
+      <div class="value">Reserva Club<br>de Pádel</div>
+    </div>
+    <div class="hero-meta">
+      <div class="label">Hora</div>
+      <div class="value">14:00 → 22:00</div>
+    </div>
+    <div class="hero-meta">
+      <div class="label">Wellness AM</div>
+      <div class="value">Avenida Escazú</div>
+    </div>
+    <div class="hero-meta">
+      <div class="label">RSVP</div>
+      <div class="value">elinvitacional<br>.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>ONVO</span><span class="dot">●</span>
+    <span>PRAGA</span><span class="dot">●</span>
+    <span>RAW</span><span class="dot">●</span>
+    <span>RESERVA</span><span class="dot">●</span>
+    <span>HOOLIGANS</span><span class="dot">●</span>
+    <span>HEINEKEN</span><span class="dot">●</span>
+    <span>ADÁN Y EVA</span><span class="dot">●</span>
+    <span>ONVO</span><span class="dot">●</span>
+    <span>PRAGA</span><span class="dot">●</span>
+    <span>RAW</span><span class="dot">●</span>
+    <span>RESERVA</span><span class="dot">●</span>
+    <span>HOOLIGANS</span><span class="dot">●</span>
+    <span>HEINEKEN</span><span class="dot">●</span>
+    <span>ADÁN Y EVA</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section class="exec">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">01 / Resumen</div>
+      <div class="section-title">
+        <h2>La Tesis del<br>Día</h2>
+        <p class="editorial">El pádel es la excusa. La excusa es perfecta porque obliga a la gente a pasar cuatro horas seguidas hombro a hombro con tres personas que nunca había conocido. Lo demás —la música, la cerveza, la comida— es solo el guion.</p>
+      </div>
+    </div>
+
+    <div class="exec-grid">
+      <div class="exec-stats">
+        <div class="stat">
+          <span class="num">185</span>
+          <span class="lbl">Invitados Únicos<br>(3 listas + 22 nuevos 2026)</span>
+        </div>
+        <div class="stat">
+          <span class="num">36 <span class="small">★</span></span>
+          <span class="lbl">Recurrentes 2+ Ediciones<br>(Tu Núcleo VIP)</span>
+        </div>
+        <div class="stat">
+          <span class="num">67 / 113</span>
+          <span class="lbl">Mujeres / Hombres<br>(37 / 63 % balance · 5 sin asignar)</span>
+        </div>
+        <div class="stat">
+          <span class="num">25 / 122 / 38</span>
+          <span class="lbl">Avanzado / Intermedio / Recreacional<br>(jugadores por categoría)</span>
+        </div>
+      </div>
+
+      <div class="exec-prose">
+        <p>El <strong>Invitacional III</strong> no es un torneo. Es una <em>experiencia social de marca</em> con pádel como vehículo. Es el "Padel Party" europeo aterrizado en San José, con la calidad de venue que solo Reserva puede dar y la energía que solo CR sabe poner.</p>
+        <p>Cuatro marcas patrocinadoras —ONVO, Praga, RAW, Reserva— conviven con dos co-patrocinadores —Heineken y Adán & Eva— sin pelearse por el oxígeno. Cada una tiene su <strong>estación, su narrativa, y su momento estelar</strong>. Nadie es wallpaper.</p>
+        <p>El día arranca con un <em>Wellness Day matutino</em> en Avenida Escazú —yoga, café RAW, y un View Party de la final de Champions League en Praga (10am, pantalla gigante, powered by Heineken 0.0)— para construir afluencia matutina con un evento ancla irresistible. A las 2pm migramos a Reserva. De ahí hasta las 10pm: <strong>juego, parranda, festival de música con line-up de 5 DJs femeninas (Hendrix · Jessi G · Julieta García · Retana · Yas Cepeda)</strong>, cierre con Captain Cup y peak hour de Yas Cepeda.</p>
+        <p style="background: rgba(14,79,71,0.08); border-left: 3px solid var(--court); padding: 0.9rem 1rem; margin: 1.2rem 0; font-size: 0.95rem;"><strong>El universo de invitados (185 personas)</strong> tiene una distribución que define el draft: <strong>Intermedio domina con 122</strong> (66% del total) y será el bracket más nutrido del Festival. <strong>Avanzado tiene desbalance de género</strong> (4 mujeres / 21 hombres) — si querés rondas same-gender Avanzado, hay que aceptar que serán casi todas masculinas o subir un par de "high intermedio" femeninas. <strong>Recreacional inverso</strong>: 21 mujeres / 17 hombres, perfecto para mestizaje natural. Con cap operativo de ~120 confirmados sobre el universo de 185, hay margen para curar la lista.</p>
+        <div class="callout">
+          <div class="quote">"La gente no se acuerda de quién ganó el torneo. Se acuerda con quién se rió, con quién se tomó la última copa, y a quién conoció esa noche que terminó siendo socio, cliente o amigo."</div>
+          <div class="attrib">— Filosofía del Invitacional</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO FORMAT OPTIONS ============ -->
+<section class="formats">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">02 / Formatos</div>
+      <div class="section-title">
+        <h2>Las Dos Vías<br>del Día</h2>
+        <p class="editorial">Las dos arquitecturas tradicionales para los mismos seis canchas. Una privilegia la <strong>tribu</strong>; la otra privilegia el <strong>mestizaje</strong>. <strong>Pero el verdadero insight viene en la sección 03</strong> — con 6 canchas y 120 personas el bottleneck físico cambia las reglas del juego, y la solución es un <em>festival multi-pista con pasaporte personal</em> que absorbe lo mejor de ambas.</p>
+      </div>
+    </div>
+
+    <div class="fmt-grid">
+      <div class="fmt">
+        <span class="badge">Opción A</span>
+        <h3>Equipos<br>por Marca</h3>
+        <div class="name">"La Copa de las Cuatro Casas"</div>
+        <p class="descr">Cada uno de los cuatro patrocinadores principales adopta un equipo. Los invitados son draft-eados a una de las casas, juegan toda la tarde defendiendo colores, y al cierre dos equipos llegan a una <em>Final de Marcas</em> bajo luces con DJ y trofeo.</p>
+
+        <dl class="fmt-table">
+          <dt>Estructura</dt>
+          <dd>4 equipos × ~25 jugadores. Pool play 3 rondas + final entre top 2.</dd>
+          <dt>Capitanes</dt>
+          <dd>Una cara visible por marca (jugador top, brand ambassador, influencer pádel CR).</dd>
+          <dt>Scoring</dt>
+          <dd>Cada partido suma puntos al equipo. Activaciones de marca otorgan <em>puntos bonus</em>.</dd>
+          <dt>Mujeres</dt>
+          <dd>Se garantiza ronda 100% mujeres por equipo + ronda mixta + ronda hombres.</dd>
+          <dt>Camisas</dt>
+          <dd>4 colores. Producción única con dorsal individual + logo de marca al frente.</dd>
+        </dl>
+
+        <div class="pros">
+          <span class="label">A favor</span>
+          <ul>
+            <li>Identidad tribal → fotos espectaculares para redes</li>
+            <li>Visibilidad sponsor brutal: 25 personas vestidas con tu marca toda la tarde</li>
+            <li>Recreacionales suman al equipo → todos sienten que importan</li>
+            <li>Los capitanes generan storyline y rivalidad amistosa</li>
+            <li>Trofeo "Copa El Invitacional" se queda con la marca ganadora hasta 2027</li>
+          </ul>
+        </div>
+
+        <div class="cons">
+          <span class="label">Trade-off</span>
+          <ul>
+            <li>Networking más limitado — juegas más con tu equipo que cross-equipo</li>
+            <li>Logística de draft requiere 2 semanas previas con confirmaciones firmes</li>
+            <li>Costo más alto en producción de uniformes (4 SKUs)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fmt">
+        <span class="badge">Opción B</span>
+        <h3>Americano<br>Social</h3>
+        <div class="name">"Cambio de pareja, cambio de historia"</div>
+        <p class="descr">Formato clásico del Padel Party español: el día se divide en <strong>3 niveles</strong> (Avanzado · Intermedio · Recreacional) y dentro de cada bracket los jugadores rotan pareja cada 25 minutos. Termina con un <em>Mexicano de Cierre</em> donde los top scorers individuales pelean por la corona.</p>
+
+        <dl class="fmt-table">
+          <dt>Estructura</dt>
+          <dd>3 brackets simultáneos. Avanzado: 1 cancha. Intermedio: 3 canchas. Recreacional: 2 canchas.</dd>
+          <dt>Mecánica</dt>
+          <dd>Rotación cada 25 min. Cada jugador termina el día habiendo jugado con 6–8 parejas distintas.</dd>
+          <dt>Scoring</dt>
+          <dd>Puntos individuales acumulados. Top 4 de cada bracket entran al Mexicano final.</dd>
+          <dt>Mujeres</dt>
+          <dd>"Reina Track" opt-in 4–6pm en Cancha 1: ronda exclusiva mujeres para quienes la prefieran.</dd>
+          <dt>Camisas</dt>
+          <dd>1 SKU del evento + brazaletes/wristbands de color por bracket.</dd>
+        </dl>
+
+        <div class="pros">
+          <span class="label">A favor</span>
+          <ul>
+            <li>Networking máximo — literal cambias de socio cada 25 min</li>
+            <li>Formato probado en circuitos europeos (Premier Padel, Hexagon, Mucho Pádel)</li>
+            <li>Equilibrio competitivo natural: juegas siempre con tu nivel</li>
+            <li>Logística más simple: 1 SKU camisa, 1 sistema de scoring</li>
+            <li>Escala bien hasta 130 jugadores sin colapsar</li>
+          </ul>
+        </div>
+
+        <div class="cons">
+          <span class="label">Trade-off</span>
+          <ul>
+            <li>Sponsors quedan "alrededor" del juego, no centrales en la narrativa</li>
+            <li>Sin storyline tribal → menos pelea épica, más fluir agradable</li>
+            <li>Recreacionales no compiten contra avanzados → menos cruzes inesperados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FESTIVAL FORMAT RECOMMENDATION ============ -->
+<section class="hybrid">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">03 / Formato Festival</div>
+      <div class="section-title">
+        <h2>El Insight:<br>Esto No Es Un Torneo</h2>
+        <p class="editorial">Con 6 canchas y 120 personas, solo el <strong>20% está jugando</strong> en cualquier momento. Si los otros 96 esperan sentados, el evento muere. La solución no es exprimir más las canchas — es convertir el día en un <strong>festival multi-pista</strong> donde el pádel es una de varias atracciones simultáneas.</p>
+      </div>
+    </div>
+
+    <div class="recommendation">
+      <div class="hybrid-pillar">
+        <h3>Pasaporte<br>Personal</h3>
+        <p>Cada invitado recibe al check-in un pasaporte impreso —formato long card 105×200mm, cartulina cream 350gsm— con SU nombre, SU equipo, SU capitán y SU itinerario del día (3 partidos pádel + 4 activaciones paralelas + cierre). Frente: identidad y "Tu Equipo" con lineup. Reverso: schedule completo del día. QR único = wallet ONVO Pay del evento.</p>
+      </div>
+
+      <div class="hybrid-rules">
+        <h3>La matemática del flow</h3>
+        <ul>
+          <li><strong>120 invitados × 3 partidos = 360 player-slots</strong> ÷ 24 simultáneos = <strong>15 rondas de pádel de 20 min</strong> = 5 horas exactas de juego (15:00 → 20:00 con sunset break).</li>
+          <li><strong>En cualquier momento:</strong> 24 en cancha + ~96 en activaciones paralelas (beer pong, cornhole, sims de golf, RAW funcional, photo booth, lounge, comida).</li>
+          <li><strong>Espera máxima entre tus partidos: 90 min.</strong> Y en esos 90 min tienes 2–3 activaciones agendadas en tu pasaporte. Imposible aburrirse.</li>
+        </ul>
+
+        <h3>El formato del juego</h3>
+        <ul>
+          <li><strong>Rondas 1–6 (15:00–17:30) · Intra-equipo:</strong> Americano dentro de tu marca. Cambias pareja cada 20 min. Los 25 de Team ONVO juegan entre sí en sus 1.5 canchas asignadas; lo mismo cada equipo. <em>Music: Set 1 (Hendrix) · Set 2 (Jessi G).</em></li>
+          <li><strong>Cambio de Set (17:00):</strong> Jessi G cierra y entra Julieta García — el mood sube. No hay break del juego, solo la música marca la transición. Las rondas siguen sin parar.</li>
+          <li><strong>Rondas 7–9 (17:30–18:30) · Cross-equipo por nivel:</strong> ahora juegas con/contra otros equipos pero a tu nivel. 1 ronda por bracket (Avanzado, Intermedio, Recreacional). <em>Music: Set 3 (Julieta García) · pre-sunset melódico.</em></li>
+          <li><strong>Sunset Showcase (18:30–19:15):</strong> 5 canchas paran 45 min para golden hour. Cancha central tiene <strong>exhibición de los 4 capitanes</strong> como warm-up del Captain Cup. Retana toma cabina con el Set 4 (sunset peak melódico). Aperol Cart de Praga + Adán y Eva en pico. Dance floor lleno.</li>
+          <li><strong>Rondas 10–15 (19:15–20:30) · Mexicano:</strong> formato de escalera. Ganadores suben cancha, perdedores bajan. Top 4 individuales avanzan. <em>Music: Set 4 cerrando con Retana.</em></li>
+          <li><strong>Captain Cup + Cierre (20:30–22:00):</strong> los 4 capitanes en cancha central iluminada. <em>Music: Set 5 (Yas Cepeda · headliner · 2 hrs) — peak hour, parranda completa.</em> Premiación, cierre, after-party Praga opcional.</li>
+        </ul>
+
+        <h3>Por qué funciona ahora</h3>
+        <ul>
+          <li><strong>Densidad de actividad sin saturar las canchas.</strong> El bottleneck físico (6 canchas) deja de ser un cuello de botella porque las activaciones paralelas absorben el 80%.</li>
+          <li><strong>La gente se conoce — perfecto.</strong> No necesitamos forzar mestizaje. La estructura intra-equipo permite que los amigos jueguen juntos en Rondas 1–6, y el cross-nivel en Rondas 7–9 da variedad sin obligación.</li>
+          <li><strong>Pasaporte = experiencia premium.</strong> Recibir tu itinerario impreso con tu nombre se siente como hospitality de evento de marca, no torneo de club.</li>
+          <li><strong>QR del pasaporte = ONVO Pay.</strong> Compras del día (extras de bar, side bets, propinas) se cargan al QR. Showcase orgánico de la solución frente a 120 HNW.</li>
+          <li><strong>Sponsor exposure intacta.</strong> Camisas por equipo + activaciones de marca + Captain Cup. La identidad tribal se mantiene en Rondas 1–6.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE / RUN OF SHOW ============ -->
+<section class="timeline">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">04 / Run of Show</div>
+      <div class="section-title">
+        <h2>El Día Hora<br>por Hora</h2>
+        <p class="editorial">Construido para que ninguna persona se quede sentada más de 15 minutos sin algo que hacer. La energía sube de manera escalonada — primero cuerpo (wellness), luego juego (pádel), luego espectáculo (Captain Cup), luego parranda pura (DJ + dinner).</p>
+      </div>
+    </div>
+
+    <!-- WELLNESS DAY -->
+    <div class="tl-block">
+      <div class="tl-block-head">
+        Wellness Day · Mañana <span style="color: var(--gold);">*</span>
+        <span class="where">Avenida Escazú + Praga · pre-evento</span>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">8:00</div>
+        <div class="tl-name"><span style="color: var(--gold);">*</span>Llegada &amp; Welcome Bar<span class="sub">Café de especialidad + jugos verdes RAW</span></div>
+        <div class="tl-detail">
+          <span class="tag raw">RAW</span><span class="tag">CAFÉ RAW TASTE</span>
+          Mesa de check-in afuera de Praga. Welcome kit: tote bag con muestras (Praga voucher, RAW pass de día, ONVO sticker, Adán y Eva mini). Música suave en parlante.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">9:00</div>
+        <div class="tl-name"><span style="color: var(--gold);">*</span>Yoga Outdoor<span class="sub">Flow tropical 60 min · Plaza central de Avenida</span></div>
+        <div class="tl-detail">
+          <span class="tag raw">RAW</span>
+          Instructora del staff RAW. Mat sponsoreado por RAW. Capacidad 40 personas. Cierra con shavasana + ronda de smoothies.
+        </div>
+      </div>
+
+      <div class="tl-row" style="background: rgba(0,168,89,0.06); margin: 0 -2rem; padding: 1.5rem 2rem; border-left: 3px solid #00A859; border-bottom: 1px dashed var(--line-light);">
+        <div class="tl-time" style="color: #80D87A;">10:00</div>
+        <div class="tl-name"><span style="color: var(--gold);">*</span>VIEW PARTY · Champions League Final<span class="sub" style="color: var(--gold);">Praga · pantalla gigante · powered by Heineken 0.0</span></div>
+        <div class="tl-detail">
+          <span class="tag heineken">HEINEKEN 0.0</span><span class="tag praga">PRAGA</span>
+          <strong>El ancla del Wellness Day.</strong> Praga monta pantalla gigante para la final de Champions League — kickoff típico CR ~13:00, pero el View Party arranca a las 10am con pre-game show, brunch, café, y Heineken 0.0 fluyendo. Heineken sponsorea el setup completo (pantalla + signage + sampling) — match perfecto: cerveza no-alcohol + futbol + audiencia HNW. Esta activación capta a la gente que no irá a yoga pero sí al View Party. <strong>Captador masivo de afluencia matutina.</strong>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">10:30</div>
+        <div class="tl-name"><span style="color: var(--gold);">*</span>Brunch en Praga (en paralelo al match)<span class="sub">Networking sin estructura, mientras corre la final</span></div>
+        <div class="tl-detail">
+          <span class="tag praga">PRAGA</span><span class="tag onvo">ONVO</span>
+          Mesa larga reservada, brunch buffet pagable con ONVO Pay (showcase QR). DJ ambient de Praga toca set chill entre tiempos del match. Aquí se cierran las primeras conversaciones de negocio mientras la pantalla gigante corre la final.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">12:30</div>
+        <div class="tl-name"><span style="color: var(--gold);">*</span>Cierre Wellness · Traslado a Reserva<span class="sub">Match terminando · 2 km / 8 min en carro</span></div>
+        <div class="tl-detail">
+          <span class="tag">LOGÍSTICA</span>
+          Shuttle van cortesía desde Avenida Escazú a Reserva (servicio sponsor). Tiempo libre para almuerzo ligero o llegada directa a Reserva. Quien siga viendo el final del match puede quedarse en Praga hasta las 13:30 — la transición es flexible.
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding: 1.2rem 1.5rem; border: 1px dashed var(--gold); background: rgba(201,165,94,0.08); font-family: 'Fraunces', serif; font-style: italic; font-size: 0.95rem; color: rgba(245,237,224,0.9); line-height: 1.5;">
+        <strong style="color: var(--gold); font-style: normal; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">* Nota</strong>
+        Toda la programación marcada con asterisco es <strong style="color: var(--cream);">para consideración de los coordinadores del Wellness Day Avenida</strong>. La mañana se construye en colaboración con el equipo de coordinación de Avenida Escazú y está sujeta a confirmación final con ellos.
+      </div>
+    </div>
+
+    <!-- TARDE - RESERVA -->
+    <div class="tl-block">
+      <div class="tl-block-head">
+        Padel Parranda · Tarde · Festival Format
+        <span class="where">Reserva Club · 6 canchas + Esplanada + Sims · 15 rondas × 20 min</span>
+      </div>
+
+      <!-- BANNER: 5 DJs FESTIVAL LINEUP -->
+      <div style="margin: 0 0 1.5rem; padding: 1.6rem 1.5rem; border: 1px solid var(--gold); background: linear-gradient(135deg, rgba(255,90,60,0.12), rgba(201,165,94,0.08)); border-left: 3px solid var(--coral);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.6rem;">★ Festival de Música · Line-up Femenino · 5 DJs · 8 hrs continuas</div>
+        <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; line-height: 1.5; color: var(--cream); margin-bottom: 1.2rem;">Esto no es "música del evento" — es un festival de música con pádel adentro. Cinco DJs femeninas armando un soundtrack de 8 horas que cuenta el arco emocional del día.</div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem;">
+          <div style="border-left: 2px solid #93B5FF; padding-left: 0.7rem;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Set 1</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--cream); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;">Hendrix</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(245,237,224,0.65); margin-top: 0.4rem; letter-spacing: 0.06em;">14:00 → 15:30</div>
+            <div style="font-size: 0.75rem; color: rgba(245,237,224,0.7); margin-top: 0.3rem; line-height: 1.35;">Apertura · welcome vibe</div>
+          </div>
+          <div style="border-left: 2px solid #FF95B5; padding-left: 0.7rem;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Set 2</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--cream); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;">Jessi G</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(245,237,224,0.65); margin-top: 0.4rem; letter-spacing: 0.06em;">15:30 → 17:00</div>
+            <div style="font-size: 0.75rem; color: rgba(245,237,224,0.7); margin-top: 0.3rem; line-height: 1.35;">Primer build · BPM sube</div>
+          </div>
+          <div style="border-left: 2px solid var(--gold); padding-left: 0.7rem;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Set 3</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--cream); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;">Julieta García</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(245,237,224,0.65); margin-top: 0.4rem; letter-spacing: 0.06em;">17:00 → 18:30</div>
+            <div style="font-size: 0.75rem; color: rgba(245,237,224,0.7); margin-top: 0.3rem; line-height: 1.35;">Pre-sunset · melodic</div>
+          </div>
+          <div style="border-left: 2px solid #6FE3A8; padding-left: 0.7rem;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Set 4</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--cream); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;">Retana</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(245,237,224,0.65); margin-top: 0.4rem; letter-spacing: 0.06em;">18:30 → 20:00</div>
+            <div style="font-size: 0.75rem; color: rgba(245,237,224,0.7); margin-top: 0.3rem; line-height: 1.35;">Sunset peak · golden hour</div>
+          </div>
+          <div style="border-left: 2px solid var(--coral); padding-left: 0.7rem;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--coral); letter-spacing: 0.1em; margin-bottom: 0.25rem;">Set 5 · Headliner</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 1.1rem; color: var(--coral); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;">Yas Cepeda</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: rgba(245,237,224,0.65); margin-top: 0.4rem; letter-spacing: 0.06em;">20:00 → 22:00</div>
+            <div style="font-size: 0.75rem; color: rgba(245,237,224,0.7); margin-top: 0.3rem; line-height: 1.35;">Peak hour · cierre 120 min</div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid rgba(201,165,94,0.25); font-family: 'Fraunces', serif; font-style: italic; font-size: 0.82rem; color: rgba(245,237,224,0.7); line-height: 1.4;">
+          <strong style="color: var(--cream); font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.78rem;">Setup técnico:</strong> Una sola DJ Booth central en el dance floor (cancha central) · equipo estandarizado para todas (CDJs + mixer Pioneer industry-standard) · cada DJ trae solo su USB con tracks · transiciones de ~5 min entre sets sin parar la música · orden final a confirmar con el equipo de booking según estilos.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">14:00</div>
+        <div class="tl-name">Apertura · Pasaporte Personal<span class="sub">Cada invitado recibe SU itinerario impreso del día</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag reserva">RESERVA</span>
+          Mesa de check-in. Cada quien recibe: camisa de su equipo (color marca) + brazalete del nivel + <strong>Pasaporte A6 con su horario personal</strong> (3 partidos agendados + 4–5 activaciones + slots libres) + QR ONVO Pay para compras del día. Welcome cocktail Adán y Eva. <strong>DJ Booth única ya montada en cancha central / dance floor</strong> — Hendrix abre el set 1 (apertura warm). Photo wall vertical IG-friendly.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">14:30</div>
+        <div class="tl-name">Rondas 1–6 · Americano Intra-Equipo<span class="sub">2 hrs · 6 rondas × 20 min · cambio pareja cada ronda</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span><span class="tag raw">RAW</span><span class="tag reserva">RESERVA</span>
+          Cada equipo en sus 1.5 canchas asignadas. Mientras 24 juegan en cancha, los <strong>otros 96 están en activaciones paralelas</strong> (ver Sección 05): beer pong, cornhole, sims de golf, RAW funcional, photo booth, lounge. Anuncio cada 20 min con micrófono + score parcial. Hidratación Heineken 0.0 + electrolitos RAW.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">17:00</div>
+        <div class="tl-name">Cambio de Set · Jessi G → Julieta García<span class="sub">Transición sin parar el juego · entra el Set 3</span></div>
+        <div class="tl-detail">
+          <span class="tag heineken">HEINEKEN</span><span class="tag praga">PRAGA</span>
+          <strong>No es un break del juego</strong> — la música, la barra, el bar Praga y las activaciones paralelas (beer pong, cornhole, sims) corren todo el día sin interrupción. Jessi G cierra Set 2 y <strong>entra Julieta García</strong> con el Set 3 (pre-sunset / melodic). Los que vienen de jugar Rondas 1–6 transicionan directo a Rondas 7–9. Heineken sampling en su pico natural.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">17:30</div>
+        <div class="tl-name">Rondas 7–9 · Cross-Equipo por Nivel<span class="sub">1 hr · variedad sin forzar networking</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span><span class="tag raw">RAW</span><span class="tag reserva">RESERVA</span>
+          1 ronda Avanzado en canchas 1–2, 1 ronda Intermedio en 3–5, 1 ronda Recreacional en 6. Avanzados de las 4 marcas se cruzan; igual cada nivel. Variedad de juego garantizada. <strong>Reina Track</strong> opt-in en cancha 1 para mujeres que pidan ronda 100% femenina.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">18:30</div>
+        <div class="tl-name">Sunset Showcase · Retana toma cabina<span class="sub">5 canchas paran 45 min · cancha central tiene contenido vivo</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span><span class="tag raw">RAW</span><span class="tag reserva">RESERVA</span><span class="tag adan">ADÁN Y EVA</span>
+          <strong>No es pausa muerta — es contenido visual.</strong> 5 canchas paran 45 min para que la gente respire en golden hour. Cancha central tiene <strong>partido de exhibición de los 4 capitanes</strong> como warm-up del Captain Cup. <strong>Retana toma la cabina con el Set 4</strong> — sunset peak melódico, golden hour. Aperol Spritz cart de Praga en su pico de actividad. Adán y Eva sampling de toda la línea + cocktail signature "El Invitacional III". Photo wall en su mejor luz del día. Sweet spot fotográfico de toda la jornada.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">19:15</div>
+        <div class="tl-name">Rondas 10–15 · Mexicano de Escalera<span class="sub">75 min · tensión competitiva ascendente</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span><span class="tag raw">RAW</span><span class="tag reserva">RESERVA</span>
+          Formato Mexicano: ganadores suben de cancha, perdedores bajan. Cancha 1 = top, Cancha 6 = entry. 6 rondas. Top scorers se identifican aquí. Audiencia se junta alrededor de canchas centrales — activaciones paralelas se reducen porque la gente quiere VER.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">20:00</div>
+        <div class="tl-name">Cena Servida + Yas Cepeda Headliner Entra<span class="sub">Hooligans + Set 5 arranca · cambio de mood</span></div>
+        <div class="tl-detail">
+          <span class="tag">HOOLIGANS</span><span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span>
+          Pasapalos circulando + 3 estaciones (parrilla, ceviche, taco bar). Pago de extras con ONVO Pay (QR en cada estación). Pantalla con top scorers y team leaderboard. <strong>Aquí entra Yas Cepeda como headliner del cierre</strong> — Set 5 arranca con un set de transición acompañando la cena. Todos saben que algo grande viene.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">20:30</div>
+        <div class="tl-name">CAPTAIN CUP · El espectáculo<span class="sub">45 min · cancha central iluminada · todos viendo</span></div>
+        <div class="tl-detail">
+          <span class="tag onvo">ONVO</span><span class="tag praga">PRAGA</span><span class="tag raw">RAW</span><span class="tag reserva">RESERVA</span>
+          Los 4 capitanes en formato Mexicano de exhibición: 2 sets corridos. Narración con micrófono. DJ baja música entre puntos, sube en cierres de set. Audiencia con cocktail en grada/court-side. El clip que circula en redes el lunes.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">21:15</div>
+        <div class="tl-name">Premiación + Copa Invitacional<span class="sub">15 min · ceremonia con ritual</span></div>
+        <div class="tl-detail">
+          <span class="tag">CEREMONIA</span>
+          Trofeo equipo ganador (Copa Invitacional perpetua, queda con la marca hasta 2027). Rey y Reina del Día (top scorer M y H). Premios laterales: Beer Pong Champion, Longest Drive, Cornhole League. Foto oficial con sponsors.
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-time">21:30</div>
+        <div class="tl-name">PEAK · Yas Cepeda Cierre<span class="sub">Set 5 en su pico · cancha central convertida en pista</span></div>
+        <div class="tl-detail">
+          <span class="tag praga">PRAGA</span><span class="tag heineken">HEINEKEN</span>
+          <strong>Yas Cepeda ya en cabina desde las 20:00.</strong> Ahora su set entra al peak hour: música a su pico, cancha central convertida en pista. Bar abierto patrocinado. Las luces dramáticas. La parranda en su clímax. After-party invite a Praga (transfer cortesía). Cierre oficial 22:00 — extensión a 23:00 pagable con ONVO Pay.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVACIONES POR MARCA ============ -->
+<section class="activations">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">05 / Activaciones</div>
+      <div class="section-title">
+        <h2>Una Marca,<br>Un Momento</h2>
+        <p class="editorial">Cada sponsor tiene su <strong>estación física</strong> y su <strong>momento estelar</strong> en el run-of-show. Ninguno compite con otro por la misma ventana de atención. Esta es la promesa al patrocinador: visibilidad orgánica, no impuesta.</p>
+      </div>
+    </div>
+
+    <div class="act-grid">
+      <div class="act onvo">
+        <div class="brand">ONVO · Patrocinador Principal</div>
+        <h4>ONVO-MALL Booth + Smart Payments Showcase</h4>
+        <p><strong>Estación signature:</strong> <strong>ONVO-MALL Booth con tablero de dardos</strong> al borde del dance floor (ver detalle en 05.b). Showcase físico de los comercios del MALL convertido en mini-juego donde la gente gana cupones que redime con ONVO Pay durante 30 días.</p>
+        <p><strong>Estación adicional:</strong> QR ONVO Pay en bar de Hooligans, Aperol Cart de Praga, side-bets de pádel. Pasaporte personal de cada invitado tiene QR único que actúa como wallet del día.</p>
+        <p><strong>Momento estelar:</strong> Captain Cup → ONVO en pantalla LED + Team ONVO en cancha + Capitán con dorsal "ONVO."</p>
+        <p><strong>Lead capture:</strong> RSVP en elinvitacional.com → pre-cualifica leads B2B (empresa, sector, GMV) + cada dardo lanzado en booth = lead escaneado → Galliano, Rodrigo, Sebas y Laura trabajan hot leads martes 2 jun.</p>
+        <div class="roi">ROI ampliado: 25 embajadores vestidos × 8 hrs + ONVO-MALL en vivo frente a 120 HNW + 100+ leads B2B + tail revenue medible 30 días post-evento (cupones redimidos vía ONVO Pay).</div>
+      </div>
+
+      <div class="act praga">
+        <div class="brand">PRAGA · Patrocinador Principal</div>
+        <h4>Aperol Spritz Cart · Signature Continuo</h4>
+        <p><strong>Estación signature:</strong> <strong>Carrito de Aperol Spritz</strong> visible al borde del dance floor / cancha central. Carrito branded Praga, bartender uniformado, copas signature, decoración naranja Aperol. <em>Reemplaza el "lounge bar tradicional" — Praga no compite con Hooligans por el bar, su signature es el Spritz.</em></p>
+        <p><strong>Operación:</strong> Constante 14:00 → 22:00. Sin pico — presencia continua. Cada Spritz lleva voucher 20% Praga válido 30 días.</p>
+        <p><strong>Momentos estelares:</strong> View Party Champions League 10am en Praga (mañana) + Sunset Showcase 18:30 + cierre con Yas Cepeda. El Spritz se vuelve <em>"el drink del Invitacional"</em>.</p>
+        <p><strong>Conversión:</strong> ~150 Spritz servidos × voucher 20% off = ~30 visitas nuevas a Praga en junio.</p>
+        <div class="roi">ROI: Branding 100% Praga sin operación de bar paralela. Spritz como content de redes asegurado + brunch wellness day + carrito signature + voucher conversion. Triple punto de contacto durante el día.</div>
+      </div>
+
+      <div class="act raw">
+        <div class="brand">RAW · Patrocinador Principal</div>
+        <h4>Mañana Wellness + Mini HYROX</h4>
+        <p><strong>Estación signature:</strong> <strong>Mini HYROX Challenge en esplanada</strong> — circuito de 3 estaciones (battle ropes 30s + kettlebell swings 20 reps + sandbag carry 20m), tiempo total cronometrado. Trainer RAW dirige, leaderboard visible. <em>"RAW no es gym, es performance"</em> en vivo frente a 120 HNW.</p>
+        <p><strong>Estación mañana:</strong> Yoga del wellness day (8–10am Avenida) + estación de hidratación con electrolitos y batidos de proteína en Reserva durante toda la tarde.</p>
+        <p><strong>Momento estelar:</strong> Mini HYROX al pico de la tarde + Yoga outdoor mañana → fotos de plaza al amanecer (best content de toda la jornada).</p>
+        <p><strong>Conversión:</strong> "Trial 1 mes RAW" en welcome kit para quienes hicieron yoga + Top 3 RAW Warrior del HYROX → trial de membresía. Captura magic-link via QR.</p>
+        <div class="roi">ROI: 40 yoga trials + ~30–40 personas pasan por HYROX → 8–12 nuevos miembros recurrentes ($75/mes) = $7K–10K ARR adicional. Branding "performance" en vivo frente a audiencia HNW objetivo.</div>
+      </div>
+
+      <div class="act reserva">
+        <div class="brand">RESERVA · Venue + Patrocinador</div>
+        <h4>The House Always Wins</h4>
+        <p><strong>Estación:</strong> Es la casa — toda la infraestructura es marca implícita. Las 6 canchas, mini-golf, simuladores. Foto wall en entrada con lockup "Reserva × El Invitacional III".</p>
+        <p><strong>Momento estelar:</strong> Captain Cup en su cancha central iluminada → Reserva sale en cada clip de redes del lunes.</p>
+        <p><strong>Conversión:</strong> Trial 1 hora cancha gratis en próximas 30 días para nuevos socios (capturados via RSVP).</p>
+        <div class="roi">ROI: Pipeline de membresías de Reserva → meta 15–25 nuevos socios para junio.</div>
+      </div>
+
+      <div class="act heineken">
+        <div class="brand">HEINEKEN · Co-Patrocinador <span style="color: #80D87A; font-weight: 700;">★ Upgrade</span></div>
+        <h4>The Champions League Sponsor</h4>
+        <p><strong>Estación primaria:</strong> 10am View Party de la final de Champions League en Praga — pantalla gigante, signage Heineken 0.0, sampling masivo. Es <em>el evento ancla</em> del Wellness Day.</p>
+        <p><strong>Estación secundaria:</strong> Hidratación oficial en Reserva durante todo el día — Heineken 0.0 mientras juegas, Heineken Silver post-cancha. Neveras branded en cada esquina, presencia constante.</p>
+        <p><strong>Momento estelar:</strong> El View Party de Champions League. Logo Heineken en pantalla durante la final + welcome kit + sampling = visibilidad mainstream con audiencia HNW + correlación natural cerveza/futbol.</p>
+        <div class="roi">ROI: Co-presencia con Champions League Final + reach orgánico ~150 invitados HNW + content de "premium non-alcoholic" en redes el lunes. Heineken eleva su tier de co-patrocinador a partner del evento ancla.</div>
+      </div>
+
+      <div class="act adan">
+        <div class="brand">ADÁN Y EVA · Co-Patrocinador</div>
+        <h4>El Welcome y El Cierre</h4>
+        <p><strong>Estación:</strong> Welcome cocktail (sampling de la línea) + cocktail signature "El Invitacional" creado para el evento (uso de Adán y Eva como base).</p>
+        <p><strong>Momento estelar:</strong> 14:00 Apertura (welcome drink en mano para foto) + 18:00 Sunset Hour (cocktail signature en cada mano).</p>
+        <p><strong>Audiencia ideal:</strong> Mujeres del invitacional son target perfecto para el producto.</p>
+        <div class="roi">ROI: Conexión emocional con audiencia mujer 30–45 + content de cocktail signature shareable.</div>
+      </div>
+    </div>
+
+    <!-- DIVIDER + PARALLEL ACTIVATIONS -->
+    <div style="margin-top: 5rem; border-top: 1px solid var(--line); padding-top: 4rem;">
+      <div class="section-head" style="margin-bottom: 3rem;">
+        <div class="section-num" style="color: var(--coral); border-top-color: var(--coral);">05.b / Paralelas</div>
+        <div class="section-title">
+          <h2 style="font-size: clamp(2rem, 4vw, 3.5rem);">Las Otras Pistas<br>del Festival</h2>
+          <p class="editorial">Para los 96 que no están en cancha en cualquier momento dado. <strong>El corazón es el dance floor — siempre activo, con gente bailando desde el set 1 hasta el cierre.</strong> Alrededor, las marcas tienen sus activaciones signature (Aperol Spritz cart, ONVO-MALL booth, Mini HYROX), y mini-competencias secundarias suman premios al trofeo del día.</p>
+        </div>
+      </div>
+
+      <!-- DANCE FLOOR · HERO BANNER -->
+      <div style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--ink) 0%, #1a1a25 100%); color: var(--cream); padding: 2.5rem 2.5rem; position: relative; overflow: hidden; border-left: 4px solid var(--coral);">
+        <div style="position: absolute; top: -40px; right: -40px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(255,90,60,0.18), transparent 70%); pointer-events: none;"></div>
+        <div style="position: relative; z-index: 2;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--coral); margin-bottom: 0.7rem;">★ EL CORAZÓN DEL FESTIVAL</div>
+          <h3 style="font-family: 'Anton', sans-serif; font-size: 2.4rem; line-height: 0.95; margin-bottom: 0.8rem; text-transform: uppercase; color: var(--cream);">Dance Floor<br><span style="color: var(--coral);">always active</span></h3>
+          <p style="font-family: 'Fraunces', serif; font-style: italic; font-size: 1.15rem; line-height: 1.5; color: var(--champagne); margin-bottom: 1.5rem; max-width: 60ch;">El dance floor está abierto desde las 14:00 hasta el cierre. La DJ booth en el centro, una zona delimitada con luces y cuerdas, photo wall al borde, y drinks circulando. Target: <strong style="color: var(--cream); font-style: normal;">20–40 personas bailando en cualquier momento del día.</strong></p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(245,237,224,0.2);">
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem;">Setup</div>
+              <div style="font-size: 0.92rem; line-height: 1.4; color: rgba(245,237,224,0.85);">DJ booth central · luces · piso delimitado · vista clara desde todas las activaciones</div>
+            </div>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem;">Drinks circulando</div>
+              <div style="font-size: 0.92rem; line-height: 1.4; color: rgba(245,237,224,0.85);">Aperol Spritz cart de Praga + Heineken neveras + meseros con cocktails Adán y Eva</div>
+            </div>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem;">Picos</div>
+              <div style="font-size: 0.92rem; line-height: 1.4; color: rgba(245,237,224,0.85);">Sunset Showcase 18:30 · Captain Cup 20:30 · Yas Cepeda peak 21:30</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="act-grid">
+
+        <!-- APEROL SPRITZ CART · PRAGA SIGNATURE -->
+        <div class="act" style="border-left: 4px solid var(--ink);">
+          <div class="brand">APEROL SPRITZ CART · by Praga</div>
+          <h4>Carrito constante en dance floor</h4>
+          <p><strong>Ubicación:</strong> Visible al borde del dance floor / cancha central. Carrito branded Praga, bartender uniformado, copas signature, decoración naranja Aperol.</p>
+          <p><strong>Concepto:</strong> Reemplaza el "lounge bar tradicional". Praga no compite con Hooligans por el bar — su signature es el <em>Aperol Spritz</em>, el drink universal del afternoon vibe europeo. Es su bandera dentro de Reserva.</p>
+          <p><strong>Operación:</strong> Constante 14:00 → 22:00. Sin pico — presencia continua. Cada Spritz lleva voucher 20% Praga (válido 30 días).</p>
+          <div class="roi">Branding 100% Praga sin necesidad de operar bar paralelo a Hooligans. Spritz se convierte en "el drink del Invitacional" — content de redes asegurado.</div>
+        </div>
+
+        <!-- ONVO-MALL BOOTH · DARTS -->
+        <div class="act onvo" style="border-left: 4px solid #1126C6;">
+          <div class="brand">ONVO-MALL BOOTH · Dardos &amp; Cupones</div>
+          <h4>Showcase + lead capture + ONVO Pay demo</h4>
+          <p><strong>Ubicación:</strong> Booth físico ONVO al borde del dance floor / patio. Tablero de dardos en el centro. Backdrop con logos de comercios del MALL.</p>
+          <p><strong>Mecánica:</strong> escaneás tu QR del pasaporte → 3 dardos → premio según donde caigan → cupón se carga a tu pasaporte digital → lo redimes vía ONVO Pay en cualquier comercio del MALL durante 30 días.</p>
+          <p><strong>Tablero premiado:</strong></p>
+          <ul style="margin: 0 0 0.8rem 1.2rem; font-size: 0.92rem; line-height: 1.5;">
+            <li><strong>Bullseye:</strong> cena Praga × 4 personas (premio mayor)</li>
+            <li><strong>Triple ring:</strong> trial RAW 1 mes / clase pádel Reserva</li>
+            <li><strong>Doble ring:</strong> Pizza Hut · Alitas Hooligans · MALL 15% off</li>
+            <li><strong>Anillos exteriores:</strong> café Praga · smoothie RAW · misc cupones</li>
+          </ul>
+          <div class="roi">Triple win: showcase del MALL en vivo + 120 leads B2B con QR escaneado + activación de pago ONVO con tail revenue 30 días post-evento. Cada dardo lanzado es una micro-conversión medible.</div>
+        </div>
+
+        <!-- MINI HYROX · RAW -->
+        <div class="act raw" style="border-left: 4px solid #DC2626;">
+          <div class="brand">RAW · MINI HYROX Challenge</div>
+          <h4>Esplanada · circuito 3 estaciones</h4>
+          <p><strong>Ubicación:</strong> Esplanada outdoor (zona delimitada). Trainer RAW dirige y cronometra.</p>
+          <p><strong>Circuito (3 estaciones):</strong></p>
+          <ul style="margin: 0 0 0.8rem 1.2rem; font-size: 0.92rem; line-height: 1.5;">
+            <li>Battle ropes · 30 segundos all-out</li>
+            <li>Kettlebell swings · 20 reps con KB 12–16kg</li>
+            <li>Sandbag carry · 20 metros con sandbag 15–20kg</li>
+          </ul>
+          <p><strong>Tiempo total cronometrado.</strong> Pizarra de leaderboard visible. Cada participante recibe foto de su intento.</p>
+          <p style="color: var(--coral); font-weight: 500;"><strong>⚠ Plan B lluvia:</strong> Se contrae a versión mini en sala interior (solo cuerdas + kettlebell, sin sandbag carry).</p>
+          <p><strong>Premio:</strong> RAW Warrior (top 3 tiempos) → trial 1 mes RAW gratis.</p>
+          <div class="roi">"RAW no es gym, es performance" en vivo frente a 120 HNW. ~30–40 personas completan circuito → 5–8 conversiones a membresía. Lead capture directo + content de redes potente.</div>
+        </div>
+
+        <!-- BEER PONG -->
+        <div class="act" style="border-left: 4px solid var(--coral);">
+          <div class="brand">BEER PONG TOURNAMENT</div>
+          <h4>4 mesas · 16 personas activas</h4>
+          <p><strong>Ubicación primaria:</strong> Esplanada (esquina norte, abierto). 4 mesas regulación 1.8m. Vasos branded Heineken o Adán y Eva.</p>
+          <p><strong>Plan B lluvia:</strong> Se mueve adentro de Hooligans — el bar lo absorbe. Pre-acuerdo con Hooligans para 6–8 mesas separables en escenario lluvia.</p>
+          <p><strong>Formato:</strong> Eliminación simple. 6 rondas × 15 min. Inscripción en pasaporte. Equipos de 2.</p>
+          <p><strong>Premio:</strong> Beer Pong Champion → cena para 4 en Praga.</p>
+          <div class="roi">Activación de máximo engagement. Audiencia natural se forma alrededor — content de redes orgánico.</div>
+        </div>
+
+        <!-- CORNHOLE · REDUCIDO A 2 SETS -->
+        <div class="act" style="border-left: 4px solid var(--coral);">
+          <div class="brand">CORNHOLE LEAGUE</div>
+          <h4>2 sets · 8 personas activas</h4>
+          <p><strong>Ubicación:</strong> Esplanada (outdoor). 2 sets de cornhole regulación con bolsas branded.</p>
+          <p style="color: var(--coral); font-weight: 500;"><strong>⚠ Plan B lluvia:</strong> Se cancela (requiere largo plano que no existe indoor). Las 8 plazas se redistribuyen a beer pong adicional + dance floor.</p>
+          <p><strong>Formato:</strong> Round robin pools, top 2 a finales. Equipos de 2.</p>
+          <p><strong>Premio:</strong> Cornhole League Champions → noche en Praga + extensión a 23:00.</p>
+          <div class="roi">Juego accesible para todo nivel atlético. Reducido a 2 sets para liberar espacio al HYROX y dance floor.</div>
+        </div>
+
+        <!-- PING PONG · EXPANDIDO A 2 MESAS -->
+        <div class="act" style="border-left: 4px solid var(--coral);">
+          <div class="brand">PING PONG · MESA SOCIAL</div>
+          <h4>2 mesas · 8 personas activas</h4>
+          <p><strong>Ubicación:</strong> Esplanada outdoor (1 mesa) + sala interior Reserva (1 mesa).</p>
+          <p><strong>Plan B lluvia:</strong> La mesa outdoor se mueve a interior. Las 2 mesas pueden duplicar como Beer Pong adicional si se necesita.</p>
+          <p><strong>Formato:</strong> Pickup informal + mini-tournament por slot. Para los que prefieren competición pura sin alcohol.</p>
+          <p><strong>Premio:</strong> Ping Pong King/Queen → smoothie pack RAW × 1 mes.</p>
+          <div class="roi">Backup activation que cubre el slot de espera de pádel. Expandido a 2 mesas para acomodar más rotación.</div>
+        </div>
+
+        <!-- SIM GOLF · LONGEST DRIVE -->
+        <div class="act" style="border-left: 4px solid var(--coral);">
+          <div class="brand">SIMULADORES DE GOLF</div>
+          <h4>Indoor en Reserva · 12 personas rotativas</h4>
+          <p><strong>Ubicación:</strong> Sala existente de simuladores en Reserva (ya cuentan con esto).</p>
+          <p><strong>Formato:</strong> "Longest Drive Challenge" — cada persona tiene 3 swings registrados durante el día. Top 3 al cierre.</p>
+          <p><strong>Premio:</strong> Longest Drive Champion → clase privada de pádel en Reserva (1 hora con coach top).</p>
+          <div class="roi">Indoor = a prueba de lluvia. Activación premium para audiencia HNW · cross-sell natural con membresías Reserva.</div>
+        </div>
+
+        <!-- PHOTO BOOTH · IG WALL -->
+        <div class="act" style="border-left: 4px solid var(--gold);">
+          <div class="brand">PHOTO BOOTH + IG WALL</div>
+          <h4>Borde del dance floor · 4–6 personas + props</h4>
+          <p><strong>Ubicación:</strong> Pared adyacente al dance floor (no a la entrada como antes — donde la energía está). Vertical formato IG Reels. Iluminación profesional.</p>
+          <p><strong>Formato:</strong> Self-service + photographer en momentos pico. Props branded (paddle inflables, gafas Heineken, sombreros Praga, copas Aperol Spritz).</p>
+          <p><strong>Output:</strong> Fotos vía AirDrop o QR a tu pasaporte digital → llegan a tu email post-evento con frame "El Invitacional III".</p>
+          <div class="roi">Content engine. Cada foto compartida = exposición orgánica de las 6 marcas patrocinadoras.</div>
+        </div>
+
+        <!-- MINI-GOLF · BONUS LLUVIA -->
+        <div class="act" style="border-left: 4px solid var(--coral); opacity: 0.85;">
+          <div class="brand">MINI-GOLF · BONUS · SOLO SI NO LLUEVE</div>
+          <h4>Outdoor · 24 personas activas · sin carpa</h4>
+          <p><strong>Ubicación:</strong> Mini-golf existente outdoor de Reserva. Terreno irregular y extenso — <strong>imposible cubrir con carpa</strong>.</p>
+          <p><strong>Formato:</strong> "Hole-in-One Challenge" — cada quien intenta un hoyo en uno en cualquiera de los 18 hoyos. Premio: cena para 2 en Praga.</p>
+          <p style="color: var(--coral); font-weight: 500;"><strong>⚠ Plan B lluvia:</strong> Se cancela limpiamente. Los 24 cupos se redistribuyen al dance floor + beer pong expandido + lounge interior.</p>
+          <div class="roi">Si funciona: actividad premium fotogénica. Si llueve: reemplazo claro y planeado.</div>
+        </div>
+
+      </div>
+
+      <!-- CAPACIDAD RECALCULADA -->
+      <div style="margin-top: 2.5rem; padding: 1.5rem 1.8rem; background: rgba(14,79,71,0.08); border-left: 3px solid var(--court); font-size: 0.95rem; line-height: 1.6;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--court); margin-bottom: 0.5rem;">Capacidad recalculada · 96 personas paralelas en cualquier momento</div>
+        <div style="color: var(--court-deep);">
+          <strong>Dance floor:</strong> 20–40 bailando · <strong>Aperol Cart:</strong> 8–12 alrededor · <strong>ONVO-MALL booth:</strong> 6–10 jugando dardos · <strong>Mini HYROX:</strong> 6–8 en circuito · <strong>Beer Pong:</strong> 16 + audiencia · <strong>Cornhole:</strong> 8 · <strong>Ping Pong:</strong> 8 · <strong>Sim Golf:</strong> 12 · <strong>Photo Booth:</strong> 4–6 · <strong>Mini-Golf:</strong> 24 (si no llueve) · <strong>Tránsito + comida:</strong> ~10. Total cubierto: 100–140 plazas para los 96 que no juegan. Hay holgura.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAMS / CAPITANES ============ -->
+<section class="teams">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">06 / Equipos</div>
+      <div class="section-title">
+        <h2>Las Cuatro<br>Casas</h2>
+        <p class="editorial">Cada equipo necesita un capitán visible — alguien que la gente reconozca, que jale storyline, que pueda hacer una grabación de 30 segundos para Instagram el viernes 28 invitando a su tribu. Idealmente un mix de ex-jugadores, brand ambassadors actuales, y caras conocidas del scene.</p>
+      </div>
+    </div>
+
+    <div class="team-grid">
+      <div class="team onvo">
+        <div class="num">01</div>
+        <div class="color-bar"></div>
+        <div class="name">Team ONVO</div>
+        <div class="vibe">"Smart Money. Smart Players."</div>
+        <div class="roster-tag">Capitán Sugerido</div>
+        <div class="roster">Jorge "ONVO" Seevers o Diego Gómez. Color navy #091558.</div>
+      </div>
+
+      <div class="team praga">
+        <div class="num">02</div>
+        <div class="color-bar"></div>
+        <div class="name">Team Praga</div>
+        <div class="vibe">"Después del juego, la noche."</div>
+        <div class="roster-tag">Capitán Sugerido</div>
+        <div class="roster">José "Chepe" Sánchez (Praga). Color black on cream.</div>
+      </div>
+
+      <div class="team raw">
+        <div class="num">03</div>
+        <div class="color-bar"></div>
+        <div class="name">Team RAW</div>
+        <div class="vibe">"Cuerpo afilado. Mente afilada."</div>
+        <div class="roster-tag">Capitán Sugerido</div>
+        <div class="roster">Papeco Esquivel (Toto) o Jenny Saborío. Color RAW red #DC2626.</div>
+      </div>
+
+      <div class="team reserva">
+        <div class="num">04</div>
+        <div class="color-bar"></div>
+        <div class="name">Team Reserva</div>
+        <div class="vibe">"La casa nunca pierde."</div>
+        <div class="roster-tag">Capitán Sugerido</div>
+        <div class="roster">Jugador top de la academia Reserva (definir con Reserva). Color verde cancha.</div>
+      </div>
+    </div>
+
+    <div class="decisions" style="margin-top: 4rem; background: rgba(255,90,60,0.12); border-left-color: var(--coral);">
+      <h4 style="color: var(--coral);">Lógica del Draft</h4>
+      <ol style="color: rgba(245,237,224,0.92);">
+        <li>Gender balance: target proporcional al universo (≈37% mujeres / 63% hombres). Por equipo de ~30 jugadores: 10–12 mujeres y 18–20 hombres. El 50/50 ya no es realista con la base actual — mejor reflejar fielmente el universo.</li>
+        <li>Level balance: cada equipo con misma proporción Avanzado/Intermedio/Recreacional según el universo del RSVP.</li>
+        <li>"Sticky pairs": parejas reales (esposos, novios, amigos cercanos que pidan jugar juntos al menos 1 ronda) se respetan dentro del mismo equipo.</li>
+        <li>Capitán pre-asignado por marca; los demás se distribuyen vía algoritmo + revisión manual de George y los capitanes la noche del jueves 28 mayo.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANDING / RSVP ============ -->
+<section class="landing">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">07 / Landing & RSVP</div>
+      <div class="section-title">
+        <h2>elinvitacional<br>.com</h2>
+        <p class="editorial">El landing tiene <strong>dos trabajos</strong>: capturar RSVPs con campos suficientes para hacer el draft de equipos, y proyectar la calidad del evento para que la gente quiera estar. Una sola página, scroll vertical, mobile-first.</p>
+      </div>
+    </div>
+
+    <div class="landing-grid">
+      <div class="landing-section">
+        <h3>Wireframe del Landing</h3>
+        <div class="wireframe">┌──────────────────────────────────────┐
+│  HERO · video o foto de Edition II   │
+│  "EL INVITACIONAL III"               │
+│  30 mayo · Reserva · 14:00–22:00     │
+│  [ RSVP ]                            │
+├──────────────────────────────────────┤
+│  MARQUEE de los 6 sponsors          │
+├──────────────────────────────────────┤
+│  EL DÍA: Wellness AM + Padel PM      │
+│  3 cards horizontales con timeline   │
+├──────────────────────────────────────┤
+│  GALERÍA Edition I + II              │
+│  9 fotos en grid asimétrico          │
+├──────────────────────────────────────┤
+│  SPONSORS WALL                       │
+│  Logos + 1 línea cada uno            │
+├──────────────────────────────────────┤
+│  RSVP FORM (ver lista abajo →)      │
+│  Submit → confirma + agrega calendar │
+├──────────────────────────────────────┤
+│  COUNTDOWN al 30 mayo               │
+├──────────────────────────────────────┤
+│  FAQ + Contacto                      │
+└──────────────────────────────────────┘</div>
+
+        <h3 style="margin-top: 2rem;">Stack Sugerido</h3>
+        <p style="font-size: 0.94rem;">Lovable o Webflow para velocidad (1–2 días). Supabase form → Sheets export para draft. Pago opcional (si haces tier VIP) via ONVO Pay — perfecto para showcasear la solución frente a 185 invitados HNW.</p>
+      </div>
+
+      <div class="landing-section">
+        <h3>Campos del RSVP Form</h3>
+        <ul class="field-list">
+          <li><span class="field-name">Nombre + Apellido</span><span class="field-meta">Required</span></li>
+          <li><span class="field-name">Email</span><span class="field-meta">Required</span></li>
+          <li><span class="field-name">Celular WhatsApp</span><span class="field-meta">Required</span></li>
+          <li><span class="field-name">Género (M / H / Prefiero no decir)</span><span class="field-meta">Required · Draft</span></li>
+          <li><span class="field-name">Nivel (Recreacional / Intermedio / Avanzado)</span><span class="field-meta">Required · Draft</span></li>
+          <li><span class="field-name">Talla camisa (XS–XXL)</span><span class="field-meta">Required</span></li>
+          <li><span class="field-name">Nombre que va al dorso</span><span class="field-meta">Required</span></li>
+          <li><span class="field-name">¿Vienes al Wellness AM?</span><span class="field-meta">Yes / No</span></li>
+          <li><span class="field-name">Pareja preferida (opcional)</span><span class="field-meta">Sticky pair</span></li>
+          <li><span class="field-name">Empresa (si aplica)</span><span class="field-meta">B2B lead</span></li>
+          <li><span class="field-name">Cargo (si aplica)</span><span class="field-meta">B2B lead</span></li>
+          <li><span class="field-name">Restricciones alimentarias</span><span class="field-meta">F&B</span></li>
+          <li><span class="field-name">¿Has venido a ediciones anteriores?</span><span class="field-meta">VIP flag</span></li>
+          <li><span class="field-name">Cómo te enteraste</span><span class="field-meta">Tracking</span></li>
+        </ul>
+
+        <h3 style="margin-top: 2rem;">Política de Capacidad</h3>
+        <p style="font-size: 0.94rem;">RSVP cap a <strong>120 confirmados</strong> (de los 185 únicos). Política first-come-first-served con override manual para los 36 recurrentes (auto-aprobados). Lista de espera activa hasta 24 hrs antes.</p>
+
+        <h3 style="margin-top: 1.5rem;">Confirmación al usuario</h3>
+        <p style="font-size: 0.94rem;">Email automático: "Estás dentro." + add-to-calendar + WhatsApp template para forwarding (viralización). Recordatorio T-7 días, T-2 días, T-day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPS CHECKLIST ============ -->
+<section class="ops">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">08 / Operacional</div>
+      <div class="section-title">
+        <h2>Lo Que Falta<br>por Decidir</h2>
+        <p class="editorial">Estamos a <strong>26 días</strong> del evento. La ventana de producción es ajustada pero suficiente — siempre que las decisiones críticas se cierren esta semana. Lo siguiente es lo que necesitas resolver con los sponsors y con tu equipo.</p>
+      </div>
+    </div>
+
+    <div class="ops-grid">
+      <div class="ops-block">
+        <h3>Checklist · 26 → 0 días</h3>
+        <ul class="checklist">
+          <li><strong>Hoy / Esta semana:</strong> aprobar formato (recomiendo Híbrido) y confirmar con los 4 capitanes.</li>
+          <li><strong>D-25 a D-21:</strong> publicar elinvitacional.com con RSVP abierto. WhatsApp blast a los 36 recurrentes primero (FOMO + early bird).</li>
+          <li><strong>D-21:</strong> confirmar producción de camisas (4 SKUs × ~25 unidades + 10% buffer).</li>
+          <li><strong>D-18:</strong> cerrar contratos sponsors con specs de activación (espacio, branding, samples, rate cards).</li>
+          <li><strong>D-14:</strong> cerrar DJ + sound rental + iluminación cancha central.</li>
+          <li><strong>D-14:</strong> menú Hooligans definido + costo cabeza + restricciones.</li>
+          <li><strong>D-10:</strong> cierre RSVP form (mínimo). Late RSVPs sólo discrecional.</li>
+          <li><strong>D-7:</strong> primer borrador del draft de equipos. Ronda con capitanes para feedback.</li>
+          <li><strong>D-3:</strong> impresión de pasaportes de activación, foto wall, signage de equipos.</li>
+          <li><strong>D-2:</strong> walk-through completo del venue con producción + sponsors + DJ.</li>
+          <li><strong>D-1:</strong> ronda final draft. Asignación final de courts. Briefings de capitanes.</li>
+          <li><strong>D-Day:</strong> 12:00 montaje, 14:00 puertas. Producción on-site con runner asignado por sponsor.</li>
+        </ul>
+      </div>
+
+      <div class="ops-block">
+        <h3>Roles del Día</h3>
+        <ul class="checklist">
+          <li><strong>Director del Evento (tú, George):</strong> visión general, contacto sponsor C-level, problema solver final.</li>
+          <li><strong>Master of Ceremonies (anfitrión):</strong> con micrófono toda la tarde, anuncia rotaciones, scoring, premiación. Recomiendo voz reconocible (locutor / influencer pádel).</li>
+          <li><strong>Tournament Director:</strong> técnico que conoce reglas y rotaciones, manejando los 6 courts. Posible: alguien de Reserva o un ref independiente.</li>
+          <li><strong>4 Capitanes:</strong> uno por marca, encargados de su tribu (reportar score, mantener moral, generar storyline).</li>
+          <li><strong>2 Runners de Producción:</strong> uno para hidratación/comida, uno para activaciones de sponsor.</li>
+          <li><strong>Photographer + Videographer:</strong> 2 personas mínimo. 1 para fotos still (calidad editorial), 1 para reels/clips. Briefing claro: capturar Captain Cup como pieza central.</li>
+          <li><strong>Lead Capture Person:</strong> alguien (Sebas o Laura del equipo retention) circulando con tablet, recolectando contactos para ONVO B2B + ayudando a sponsors con sus formularios.</li>
+          <li><strong>Bar Manager:</strong> coordina rotación Heineken / Adán y Eva / Praga sin conflicto. Crítico al sunset.</li>
+        </ul>
+
+        <div class="decisions">
+          <h4>Decisiones Abiertas — Necesitan Cierre Esta Semana</h4>
+          <ol>
+            <li><strong>Coordinación Wellness Day Avenida:</strong> sentarse con los coordinadores del Wellness Day en Avenida Escazú para alinear la programación matutina. Toda la mañana (8am–12:30pm) está marcada con asterisco en el playbook por respetarse la agenda existente que ya viene trabajada — la propuesta nuestra (yoga + View Party + brunch) es <em>para su consideración</em>, no imposición.</li>
+            <li><strong>VIEW PARTY Champions League Final · Praga + Heineken:</strong> confirmar (a) disponibilidad de pantalla gigante en Praga, (b) horario exacto kickoff de la final (sábado 30 mayo, kickoff típicamente 13:00 CR), (c) acuerdo con Heineken para sponsor explícito del View Party (Heineken 0.0 + signage + sampling). Esta activación eleva a Heineken de co-patrocinador a partner del evento ancla matutino — vale renegociar contribución.</li>
+            <li><strong>Formato definitivo:</strong> Festival con Pasaporte Personal confirmado. Antonio arranca scheduling algorithm cuando cierre RSVP (D-10).</li>
+            <li><strong>4 capitanes con nombre y apellido:</strong> son la cara pública del evento, hay que cerrarlos antes que se publique el landing. Capitanes también van impresos en el pasaporte de su equipo.</li>
+            <li><strong>Pasaporte físico · producción:</strong> Long card 105×200mm, cartulina cream 350gsm, doble cara, foiling selectivo. 130 unidades (120 + 10 buffer). Producción local CR con sublimación digital, 7–10 días. Plantilla maestra + variables (nombre, equipo, schedule) generadas por algoritmo Antonio → PDF batch a impresor D-5.</li>
+            <li><strong>Confirmar techado de canchas pádel:</strong> ¿las 6 canchas de Reserva están techadas/cubiertas o son outdoor? Crítico para el plan B lluvia. <strong>Pregunta para Reserva esta semana.</strong></li>
+            <li><strong>Pre-acuerdo con Hooligans · Modo Lluvia:</strong> capacidad para 6–8 mesas de Beer Pong + lounge expandido en escenario chubasco. Mesas separables, staff de bar suficiente. Conversación operativa con Hooligans D-21.</li>
+            <li><strong>Protocolo de seguimiento del clima:</strong> T-7 días primer pronóstico → tono de comms, T-2 días decisión Plan A vs Plan B → notificar sponsors qué activaciones se mueven, D-Day mañana decisión final con Reserva sobre mini-golf y esplanada.</li>
+            <li><strong>Inventory de equipo · activaciones paralelas:</strong> 4 mesas beer pong (1.8m regulación) · 2 mesas ping pong · 2 sets cornhole · setup HYROX RAW (battle ropes 2× + kettlebells 12-16kg 4× + sandbags 15-20kg 2×) · tablero dardos premium + dardos × 6 sets · carrito Aperol Spritz (renta o compra) · booth ONVO-MALL armable · props photo booth. ¿Reserva tiene parte? ¿RAW aporta lo de HYROX? Inventario y compra/renta esta semana D-21.</li>
+            <li><strong>Tier VIP / pago / RSVP:</strong> ¿cortesía pura o fee simbólico (₡15–25K) cubre costos? Fuertemente recomiendo fee pagable con ONVO Pay — showcase orgánico y filtra no-shows.</li>
+            <li><strong>Camisetas:</strong> 4 colores × ~30 unidades cada uno. Producción local CR con sublimación (sí hay proveedores con capacidad para 26 días).</li>
+            <li><strong>Trofeo "Copa Invitacional" perpetuo + premios laterales:</strong> 1 trofeo grande + 6 medallas/placas (Rey/Reina, Beer Pong, Longest Drive, Cornhole, RAW Warrior, MVP Recreacional).</li>
+            <li><strong>Sponsorship rate card actualizado:</strong> ONVO/Praga/RAW/Reserva tier principal con compromiso $X cada uno. Heineken sube de tier por View Party. Adán y Eva mantiene contribución en producto + cocktail signature.</li>
+            <li><strong>After-party en Praga:</strong> ¿oficial o no? Si oficial, reserva área 22:00–01:00 + transfer cortesía para quienes sigan.</li>
+            <li><strong>Line-up de 5 DJs · Festival de Música Femenino:</strong> Hendrix · Jessi G · Julieta García · Retana · Yas Cepeda. Slots de 90 min cada una excepto Yas Cepeda (headliner, 120 min). Total 8 hrs continuas de música. <strong>Setup confirmado:</strong> una sola DJ Booth central en el dance floor (cancha central), equipo estandarizado para todas (CDJs + mixer Pioneer industry-standard), cada DJ trae solo su USB, transiciones ~5 min entre sets. <strong>Pendiente:</strong> (1) confirmar disponibilidad y fee de cada DJ, (2) coordinar orden final según estilos, (3) <strong>Julieta García también está en lista de invitadas — confirmar si DJ y/o juega</strong>, (4) negociar con Praga si su residente puede absorber 1–2 slots como contribución sponsor en especie, (5) rental técnico: CDJ-3000 × 2 + DJM-900NXS2 + monitores cabina + sound system distribuido + iluminación cancha central. Esta line-up 100% femenina es un statement narrativo y vale destacarlo en marketing.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="badge-row">
+    <span class="b">ONVO</span>
+    <span class="b">PRAGA</span>
+    <span class="b">RAW</span>
+    <span class="b">RESERVA</span>
+    <span class="b">HOOLIGANS</span>
+    <span class="b">HEINEKEN</span>
+    <span class="b">ADÁN Y EVA</span>
+  </div>
+  <div class="closing">"Real Connections Matter — even when there's a paddle in your hand."</div>
+  <div class="meta">El Invitacional III · 30 Mayo 2026 · Reserva Club de Padel · San José, Costa Rica</div>
+</footer>
+
+</body>
+</html>

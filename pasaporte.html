@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasaporte · El Invitacional III · Mock-up HiFi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --court: #0E4F47;
+  --court-deep: #08332D;
+  --coral: #FF5A3C;
+  --cream: #F5EDE0;
+  --cream-dark: #E8DCC8;
+  --ink: #0F0F12;
+  --gold: #C9A55E;
+  --champagne: #E8D8B8;
+  --onvo-navy: #091558;
+  --onvo-blue: #1126C6;
+  --onvo-mint: #CFEDE6;
+  --paper: #FBF6EC;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 30%, rgba(15,15,18,0.04), transparent),
+    linear-gradient(180deg, #E8DCC8 0%, #D4C5A8 100%);
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* paper grain via subtle dot pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(15,15,18,0.025) 1px, transparent 0);
+  background-size: 4px 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scene {
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.legend {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.legend .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--court-deep);
+  margin-bottom: 1rem;
+}
+
+.legend .eyebrow::before, .legend .eyebrow::after {
+  content: '· ·';
+  margin: 0 0.7rem;
+  color: var(--coral);
+  letter-spacing: -0.05em;
+}
+
+.legend h1 {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.7rem;
+  line-height: 1.05;
+}
+
+.legend p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(15,15,18,0.65);
+  max-width: 50ch;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.flatlay {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ============ PASAPORTE BASE ============ */
+.pasaporte {
+  background: var(--paper);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 30px 60px -20px rgba(15,15,18,0.35),
+    0 50px 80px -40px rgba(15,15,18,0.25),
+    0 0 0 0.5px rgba(15,15,18,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pasaporte.front { aspect-ratio: 105 / 200; }
+.pasaporte.back { aspect-ratio: auto; }
+
+.pasaporte.front { transform: rotate(-1.2deg); }
+.pasaporte.back { transform: rotate(0.8deg); }
+
+/* Paper grain overlay */
+.pasaporte::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 0.5px 0.5px, rgba(15,15,18,0.018) 1px, transparent 0);
+  background-size: 3px 3px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.flag {
+  position: absolute;
+  bottom: 8px;
+  right: -28px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  padding: 0.3rem 2.5rem;
+  transform: rotate(-45deg);
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* ============ FRONT COVER ============ */
+.pasaporte.front {
+  background: var(--ink);
+  color: var(--cream);
+  border-top: 8px solid var(--onvo-blue);
+  padding: 2rem 1.7rem;
+  position: relative;
+}
+
+.pasaporte.front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 80% 20%, rgba(255,90,60,0.18), transparent 60%),
+    radial-gradient(ellipse 50% 30% at 20% 90%, rgba(17,38,198,0.25), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.front-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.front-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.front-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.front-mark .em { color: var(--coral); font-style: normal; }
+
+.front-edition {
+  border: 1px solid rgba(245,237,224,0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.front-display {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: 0.005em;
+  margin-top: 0.5rem;
+}
+
+.front-display .l1 { font-size: clamp(2.3rem, 6vw, 3.2rem); display: block; }
+.front-display .l2 { font-size: clamp(2.3rem, 6vw, 3.2rem); display: block; color: var(--gold); }
+.front-display .l3 { font-size: clamp(2.3rem, 6vw, 3.2rem); display: block; }
+.front-display .l3 .roman {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.7em;
+  text-transform: none;
+  color: var(--coral);
+  vertical-align: super;
+  margin-left: 0.1em;
+  font-weight: 400;
+}
+
+.front-divider {
+  width: 50%;
+  height: 1px;
+  background: rgba(245,237,224,0.25);
+  margin: 1.5rem 0 1.3rem;
+}
+
+.front-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  line-height: 1.05;
+  color: var(--cream);
+  letter-spacing: -0.015em;
+  margin-bottom: 1.2rem;
+}
+
+.front-name .first { display: block; }
+.front-name .last { display: block; color: var(--coral); font-weight: 500; }
+
+.front-meta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.front-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.front-meta .lbl {
+  color: rgba(245,237,224,0.5);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.front-meta .val {
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.front-team {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(245,237,224,0.18);
+}
+
+.front-team .swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--onvo-blue);
+  box-shadow: 0 0 0 1px rgba(245,237,224,0.2);
+}
+
+.front-team .name {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.front-team .lvl {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.front-roster {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(245,237,224,0.18);
+}
+
+.roster-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+
+.roster-label {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+.roster-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.5);
+}
+
+.roster-cap {
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.cap-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral);
+  background: rgba(255,90,60,0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,90,60,0.4);
+}
+
+.cap-name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--cream);
+  font-weight: 500;
+}
+
+.roster-list {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  line-height: 1.55;
+  color: rgba(245,237,224,0.75);
+  letter-spacing: 0.005em;
+}
+
+.roster-list .more {
+  color: var(--coral);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.front-bottom {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(245,237,224,0.18);
+}
+
+.front-date .lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.5);
+  margin-bottom: 0.3rem;
+}
+
+.front-date .val {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+.front-date .sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+
+.qr {
+  width: 64px;
+  height: 64px;
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.qr .pixel {
+  background: var(--ink);
+  border-radius: 0.5px;
+}
+
+.qr .pixel.empty {
+  background: transparent;
+}
+
+.front-sponsor-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--coral);
+  color: var(--ink);
+  padding: 0.45rem 1.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.front-sponsor-strip .dot { color: rgba(15,15,18,0.4); }
+
+/* ============ BACK SCHEDULE ============ */
+.pasaporte.back {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 1.4rem 1.3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.back-mark {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.back-mark .em {
+  color: var(--coral);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.back-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: rgba(15,15,18,0.5);
+  text-transform: uppercase;
+}
+
+.back-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: 0.18rem;
+  color: var(--ink);
+}
+
+.back-title-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--court);
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.block {
+  margin-bottom: 0.35rem;
+}
+
+.block-head {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--court-deep);
+  border-bottom: 1px dashed rgba(15,15,18,0.18);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.28rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.block-head .where {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  color: rgba(15,15,18,0.45);
+}
+
+.block.am .block-head { color: var(--gold); border-bottom-color: var(--gold); }
+
+.row {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 0.55rem;
+  padding: 0.22rem 0;
+  align-items: start;
+  border-bottom: 1px solid rgba(15,15,18,0.05);
+}
+
+.row:last-child { border-bottom: none; }
+
+.row .time {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.74rem;
+  color: var(--coral);
+  letter-spacing: 0.005em;
+  padding-top: 1px;
+}
+
+.row .activity {
+  font-size: 0.6rem;
+  line-height: 1.3;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.row .activity .sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.47rem;
+  letter-spacing: 0.06em;
+  color: rgba(15,15,18,0.5);
+  display: block;
+  margin-top: 0.06rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.row .activity .ast {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 0.15em;
+}
+
+.row.feature .time { color: var(--onvo-blue); }
+.row.feature .activity { font-weight: 700; }
+
+.row.padel .activity::before {
+  content: '●';
+  color: var(--coral);
+  margin-right: 0.3em;
+  font-size: 0.55em;
+  vertical-align: middle;
+}
+
+.row.captain {
+  background: var(--ink);
+  color: var(--cream);
+  margin: 0.3rem -1.3rem;
+  padding: 0.42rem 1.3rem;
+  border: none;
+  grid-template-columns: 38px 1fr;
+}
+
+.row.captain .time { color: var(--coral); }
+.row.captain .activity { color: var(--cream); font-weight: 700; }
+.row.captain .activity .sub { color: var(--gold); }
+
+.footer-note {
+  margin-top: 0.4rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(15,15,18,0.12);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.55rem;
+  line-height: 1.4;
+  color: rgba(15,15,18,0.65);
+}
+
+.footer-note .ast {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.back-sponsors {
+  margin: 0 -1.3rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.42rem 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.back-sponsors .dot { color: var(--coral); }
+
+/* ============ NOTES BELOW FLATLAY ============ */
+.spec-notes {
+  margin-top: 5rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 3rem 2.5rem;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.spec-notes h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  color: var(--coral);
+  border-bottom: 1px solid rgba(245,237,224,0.2);
+  padding-bottom: 0.5rem;
+}
+
+.spec-notes ul { list-style: none; padding: 0; }
+
+.spec-notes li {
+  padding: 0.45rem 0 0.45rem 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  border-bottom: 1px dashed rgba(245,237,224,0.12);
+  position: relative;
+  color: rgba(245,237,224,0.85);
+}
+
+.spec-notes li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--coral);
+  font-size: 0.65em;
+  top: 0.85em;
+}
+
+.spec-notes strong { color: var(--cream); font-weight: 600; }
+
+.spec-notes em {
+  font-family: 'Fraunces', serif;
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .flatlay { grid-template-columns: 1fr; gap: 3rem; }
+  .pasaporte.front, .pasaporte.back { transform: none; max-width: 380px; }
+  .spec-notes { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="scene">
+
+  <div class="legend">
+    <div class="eyebrow">Mock-up · Hi-Fi · Long Card · 105 × 200 mm</div>
+    <h1>El Pasaporte del Día</h1>
+    <p>Cada invitado recibe el suyo al check-in. Personalizado con su nombre, su equipo, su nivel, y su itinerario individual generado por el algoritmo de scheduling. Frente y reverso impresos a doble cara en cartulina cream 350gsm.</p>
+  </div>
+
+  <div class="flatlay">
+
+    <!-- ============ FRONT ============ -->
+    <div class="pasaporte front">
+      <div class="flag">Cover · Front</div>
+      <div class="front-content">
+
+        <div class="front-header">
+          <div class="front-mark">El Invitacional<br><span class="em">—</span> Tercera Edición</div>
+          <div class="front-edition">No. 072 · 165</div>
+        </div>
+
+        <div class="front-display">
+          <span class="l1">El</span>
+          <span class="l2">Invitacional</span>
+          <span class="l3">III<span class="roman"> ·</span></span>
+        </div>
+
+        <div class="front-divider"></div>
+
+        <div class="front-name">
+          <span class="first">Player</span>
+          <span class="last">One</span>
+        </div>
+
+        <div class="front-team">
+          <div class="swatch"></div>
+          <div class="name">Team ONVO</div>
+          <div class="lvl">Intermedio</div>
+        </div>
+
+        <div class="front-roster">
+          <div class="roster-head">
+            <span class="roster-label">Tu Equipo</span>
+            <span class="roster-count">25 jugadores</span>
+          </div>
+          <div class="roster-cap">
+            <span class="cap-tag">Capitán</span>
+            <span class="cap-name">Diego Gómez Dueñas</span>
+          </div>
+          <div class="roster-list">
+            Diego Gómez · Galliano Luconi · Rodrigo Castro · Anke Pechtel · Patricia Figueroa · Marcela Meza · Andrés Riggioni · Daniel Calvosa · Cristina Morales · Diana Truque · Antonio Pinto · Adriana Chaverri <span class="more">+ 12 más</span>
+          </div>
+        </div>
+
+        <div class="front-bottom">
+          <div class="front-date">
+            <div class="lbl">Sábado</div>
+            <div class="val">30 · MAY · 26</div>
+            <div class="sub">14:00 → cierre</div>
+          </div>
+
+          <div class="qr" aria-label="QR code para pasaporte digital ONVO Pay">
+            <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div>
+            <div class="pixel"></div><div class="pixel empty"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel empty"></div><div class="pixel"></div>
+            <div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div>
+            <div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel empty"></div>
+            <div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div>
+            <div class="pixel"></div><div class="pixel empty"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel empty"></div><div class="pixel"></div>
+            <div class="pixel"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel empty"></div><div class="pixel"></div><div class="pixel"></div><div class="pixel"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="front-sponsor-strip">
+        <span>ONVO</span><span class="dot">●</span>
+        <span>Praga</span><span class="dot">●</span>
+        <span>RAW</span><span class="dot">●</span>
+        <span>Reserva</span><span class="dot">●</span>
+        <span>Hooligans</span>
+      </div>
+    </div>
+
+    <!-- ============ BACK ============ -->
+    <div class="pasaporte back">
+      <div class="flag">Schedule · Back</div>
+
+      <div class="back-header">
+        <div class="back-mark">Tu día <span class="em">— en detalle</span></div>
+        <div class="back-id">P1-072</div>
+      </div>
+
+      <div class="back-title">Player One,</div>
+      <div class="back-title-sub">Aquí están tus partidos y tus paradas</div>
+
+      <!-- BLOQUE MAÑANA (asterisks) -->
+      <div class="block am">
+        <div class="block-head">Mañana<span class="where">Wellness Day · Avenida Escazú</span></div>
+
+        <div class="row">
+          <div class="time">8:00</div>
+          <div class="activity">
+            <span class="ast">*</span>Llegada &amp; Welcome Bar
+            <span class="sub">Café especialidad + jugos verdes RAW</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">9:00</div>
+          <div class="activity">
+            <span class="ast">*</span>Yoga Outdoor · 60 min flow tropical
+            <span class="sub">Plaza Central Avenida · 40 mats RAW</span>
+          </div>
+        </div>
+
+        <div class="row feature">
+          <div class="time">10:00</div>
+          <div class="activity">
+            <span class="ast">*</span>VIEW PARTY · Champions League Final
+            <span class="sub">Praga · pantalla gigante · powered by Heineken 0.0</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">12:30</div>
+          <div class="activity">
+            <span class="ast">*</span>Brunch en Praga &amp; traslado a Reserva
+            <span class="sub">Shuttle van cortesía · 8 min en carro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE TARDE -->
+      <div class="block">
+        <div class="block-head">Tarde · Padel Parranda<span class="where">Reserva Club · 6 canchas</span></div>
+
+        <div class="row">
+          <div class="time">14:00</div>
+          <div class="activity">Check-in · recibes este pasaporte
+            <span class="sub">Camisa Team ONVO · brazalete intermedio</span>
+          </div>
+        </div>
+
+        <div class="row padel">
+          <div class="time">14:30</div>
+          <div class="activity">Cancha 3 · Ronda 1 (intra-equipo)
+            <span class="sub">Americano · pareja asignada</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">15:00</div>
+          <div class="activity">Beer Pong · Mesa 2
+            <span class="sub">Equipo libre · 15 min</span>
+          </div>
+        </div>
+
+        <div class="row padel">
+          <div class="time">15:30</div>
+          <div class="activity">Cancha 5 · Ronda 4
+            <span class="sub">Americano · nueva pareja</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">16:30</div>
+          <div class="activity">Cornhole · Set 1
+            <span class="sub">Round robin · 30 min</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">17:00</div>
+          <div class="activity">Coffee/Beer Break · libre
+            <span class="sub">Heineken sampling + photo wall</span>
+          </div>
+        </div>
+
+        <div class="row padel">
+          <div class="time">17:30</div>
+          <div class="activity">Cancha 1 · Ronda 8 (cross-equipo)
+            <span class="sub">Avanzado/Intermedio mix · variedad</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">18:00</div>
+          <div class="activity">Sim de Golf · Longest Drive
+            <span class="sub">3 swings registrados</span>
+          </div>
+        </div>
+
+        <div class="row feature">
+          <div class="time">18:30</div>
+          <div class="activity">Sunset Hour · Bar Praga
+            <span class="sub">Cocktail signature "El Invitacional III"</span>
+          </div>
+        </div>
+
+        <div class="row padel">
+          <div class="time">19:15</div>
+          <div class="activity">Cancha 4 · Ronda 12 (Mexicano)
+            <span class="sub">Sube si ganas · baja si pierdes</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">20:00</div>
+          <div class="activity">Cena Hooligans · pasapalos + estaciones
+            <span class="sub">Pago con tu QR ONVO Pay</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE CIERRE -->
+      <div class="row captain">
+        <div class="time">20:30</div>
+        <div class="activity">CAPTAIN CUP · cancha central
+          <span class="sub">El espectáculo · cocktail en mano</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="row">
+          <div class="time">21:15</div>
+          <div class="activity">Premiación + Copa Invitacional
+            <span class="sub">Trofeos equipo + Rey/Reina del día</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">21:30</div>
+          <div class="activity">DJ Set · cancha central → pista
+            <span class="sub">Top DJ Praga residente</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="time">22:00</div>
+          <div class="activity">Cierre · After-party Praga (opcional)
+            <span class="sub">Transfer cortesía · extensión hasta 23:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <span class="ast">*</span> Para consideración de los coordinadores del Wellness Day Avenida — la programación matutina está sujeta a confirmación final con el equipo de coordinación.
+      </div>
+
+      <div class="back-sponsors">
+        <span>ONVO</span><span class="dot">●</span>
+        <span>Praga</span><span class="dot">●</span>
+        <span>RAW</span><span class="dot">●</span>
+        <span>Reserva</span><span class="dot">●</span>
+        <span>Heineken</span><span class="dot">●</span>
+        <span>Adán y Eva</span>
+      </div>
+
+    </div>
+
+  </div><!-- /flatlay -->
+
+  <!-- ============ SPEC NOTES ============ -->
+  <div class="spec-notes">
+    <div>
+      <h3>Especificación de Producción</h3>
+      <ul>
+        <li><strong>Tamaño:</strong> Long card portrait, 105 × 200 mm (formato boarding-pass premium). Sangre 3 mm, área segura 5 mm de cada borde.</li>
+        <li><strong>Papel:</strong> cartulina cream texture 350 gsm. Acabado mate con foiling selectivo en el "III" del frente (gold) y en el nombre del invitado (cream sobre ink).</li>
+        <li><strong>Impresión:</strong> doble cara, CMYK + 1 tinta directa Pantone (coral). Acabado redondeado en esquinas para evitar dobleces.</li>
+        <li><strong>Personalización:</strong> nombre + número (#072 / 165), QR único por persona, equipo asignado, nivel, número de partidos asignados.</li>
+        <li><strong>Cantidad:</strong> 130 unidades (120 confirmados + 10 buffer). Producción en CR con sublimación digital 7–10 días.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Lógica del Schedule Personalizado</h3>
+      <ul>
+        <li><strong>3 partidos pádel</strong> agendados por persona (Rondas 1, 4, 8, 12 son ejemplos — el algoritmo asigna en función de equipo + nivel).</li>
+        <li><strong>4 activaciones paralelas</strong> sugeridas en slots libres (beer pong, cornhole, sims, cierre social). El usuario puede saltar las que no le interesen.</li>
+        <li><strong>Espera máxima entre partidos: 90 min.</strong> Constraint del algoritmo de scheduling que Antonio implementa post-cierre RSVP.</li>
+        <li><strong>QR del frente</strong> = wallet ONVO Pay del día. Cualquier compra (extras de bar, side bets, propinas, after) se carga aquí. Showcase orgánico de la solución.</li>
+        <li><strong>Asterisco</strong> en todo lo pre-2pm <em>"Para consideración de los coordinadores del Wellness Day Avenida"</em> — la mañana queda abierta a refinamiento por el equipo de coordinación de Avenida.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /scene -->
+
+</body>
+</html>
