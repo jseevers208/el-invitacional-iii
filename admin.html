@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Invitacional III · Cuadro en Vivo</title>
+<title>El Invitacional III · ADMIN · Cuadro Oficial</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -166,9 +166,9 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="tag-row">★ Torneo · 30 mayo 2026 · Reserva Club</div>
+    <div class="tag-row">★ Torneo · 30 mayo 2026 · Reserva Club · MODO ADMIN</div>
     <h1>El Invitacional III</h1>
-    <p class="subtitle">Cuadro oficial en vivo. Los resultados se actualizan automáticamente cuando el staff oficial registra ganadores. Refresco cada 30 segundos.</p>
+    <p class="subtitle">Panel oficial de administración. Tus clicks se sincronizan automáticamente con el cuadro público de todos los jugadores.</p>
     <div class="hero-stats">
       <div class="hs"><div class="lbl">Parejas</div><div class="num">44</div></div>
       <div class="hs"><div class="lbl">Partidos</div><div class="num">67</div></div>
@@ -178,9 +178,15 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   </div>
 </div>
 
+<div class="admin-banner">
+  <strong>⚡ MODO ADMIN</strong>
+  <span style="flex: 1;">Tus cambios son la fuente oficial · se publican a todos los usuarios automáticamente</span>
+  <button class="btn" onclick="logout()" style="background: rgba(255,255,255,0.2); color: white; border-color: transparent;">Salir</button>
+</div>
 <div class="status-bar">
   <span class="dot" id="sync-dot"></span>
-  <span class="label" id="sync-label">Conectado · resultados oficiales en vivo</span>
+  <span class="label" id="sync-label">Listo para escribir resultados oficiales</span>
+  <button class="btn danger" onclick="resetAll()" style="margin-right: 8px;">Reset todo</button>
   <span class="last-update" id="last-update">--:--:--</span>
 </div>
 
@@ -268,10 +274,28 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
 <footer>El Invitacional III · ONVO · Praga · RAW · Reserva · Heineken · Adán y Eva</footer>
 </div>
 
+<div id="config-modal" class="config-modal" style="display:none;">
+  <div class="modal-content">
+    <h3>Acceso ADMIN</h3>
+    <p>Ingresá la contraseña del staff. Esta vista te permite registrar los resultados oficiales del torneo.</p>
+    <label>Contraseña</label>
+    <input type="password" id="pwd-input" placeholder="Contraseña de staff" />
+    <div class="actions">
+      <button class="btn primary" onclick="checkPassword()">Entrar</button>
+    </div>
+  </div>
+</div>
+
 <script>
-const IS_ADMIN = false;
+const IS_ADMIN = true;
 const GIST_ID = '1fcd3752fda914967ba4b58630fa46d9';
-const POLL_INTERVAL_MS = 30000;
+const GH_TOKEN = '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';
+const ADMIN_PASSWORD = 'reserva-30may';
+const GIST_FILENAME = 'invitacional_state.json';
+
+let saveTimer = null;
+let saveInFlight = false;
+
 
 const DATA = {"h2":{"groups":{"A":["Alejandro Pastora / Pareja","Rodri Madrigas / Nano Clare","Esteban Madrid / Alvaro Pacheco","Marco Gassel / Joao Simoes"],"B":["FJ Temperino / Daniel Victoria","Juan Ocampo / Alvaro Mena","Jean Valverde / Hernán Hernández","Ed Torrentes / JuanMa Alonso"],"C":["Gabo Saborío / Adrián Valverde","Ariel Reifer / Kiko Lang","Pedro Abreu / Jose Muñoz","Alessandro Di Palma / Oliver"],"D":["Daniel Calvosa / Calo Barquero","Paul / Ayax","Tito Chaves / David Valverde","Alberto Dent / Andrés"]},"sched":[{"r":1,"h":"14:00","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Rodri Madrigas / Nano Clare"},{"r":1,"h":"14:00","c":"C2","g":"A","a":"Esteban Madrid / Alvaro Pacheco","b":"Marco Gassel / Joao Simoes"},{"r":2,"h":"14:20","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Esteban Madrid / Alvaro Pacheco"},{"r":2,"h":"14:20","c":"C2","g":"A","a":"Rodri Madrigas / Nano Clare","b":"Marco Gassel / Joao Simoes"},{"r":3,"h":"14:40","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Marco Gassel / Joao Simoes"},{"r":3,"h":"14:40","c":"C2","g":"A","a":"Rodri Madrigas / Nano Clare","b":"Esteban Madrid / Alvaro Pacheco"},{"r":4,"h":"15:00","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Juan Ocampo / Alvaro Mena"},{"r":4,"h":"15:00","c":"C2","g":"B","a":"Jean Valverde / Hernán Hernández","b":"Ed Torrentes / JuanMa Alonso"},{"r":5,"h":"15:20","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Jean Valverde / Hernán Hernández"},{"r":5,"h":"15:20","c":"C2","g":"B","a":"Juan Ocampo / Alvaro Mena","b":"Ed Torrentes / JuanMa Alonso"},{"r":6,"h":"15:40","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Ed Torrentes / JuanMa Alonso"},{"r":6,"h":"15:40","c":"C2","g":"B","a":"Juan Ocampo / Alvaro Mena","b":"Jean Valverde / Hernán Hernández"},{"r":7,"h":"16:00","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Ariel Reifer / Kiko Lang"},{"r":7,"h":"16:00","c":"C2","g":"C","a":"Pedro Abreu / Jose Muñoz","b":"Alessandro Di Palma / Oliver"},{"r":8,"h":"16:20","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Pedro Abreu / Jose Muñoz"},{"r":8,"h":"16:20","c":"C2","g":"C","a":"Ariel Reifer / Kiko Lang","b":"Alessandro Di Palma / Oliver"},{"r":9,"h":"16:40","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Alessandro Di Palma / Oliver"},{"r":9,"h":"16:40","c":"C2","g":"C","a":"Ariel Reifer / Kiko Lang","b":"Pedro Abreu / Jose Muñoz"},{"r":10,"h":"17:00","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Paul / Ayax"},{"r":10,"h":"17:00","c":"C2","g":"D","a":"Tito Chaves / David Valverde","b":"Alberto Dent / Andrés"},{"r":11,"h":"17:20","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Tito Chaves / David Valverde"},{"r":11,"h":"17:20","c":"C2","g":"D","a":"Paul / Ayax","b":"Alberto Dent / Andrés"},{"r":12,"h":"17:40","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Alberto Dent / Andrés"},{"r":12,"h":"17:40","c":"C2","g":"D","a":"Paul / Ayax","b":"Tito Chaves / David Valverde"}]},"h1":{"groups":{"A":["Alonso Cordero / Vega","Juanfran Montealegre / Luciano Sif","Carlos Monge / Mariano Salazar","Marco Aguilar / Nayib Aguilar"],"B":["Luis Chacón / Ricardo Romero","Brandom Carter / Ale Aguilar","Denzell Castro / Ale Morales","Manfred Dorzam / Fede Valera"],"C":["Juan Mora / Gonza Vargas","Carlos Robles / Andrey Morales","Jaime Quirós / Luis Vasadre","Charlie Hernández / Ricardo Alvara"],"D":["Richi / Julián Abreu","Fausto Amador / Mario Pacheco","Irving Vega / Gilbert","Fabián Brenes / Víctor Wolf"]},"sched":[{"r":1,"h":"14:00","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Juanfran Montealegre / Luciano Sif"},{"r":1,"h":"14:00","c":"C4","g":"A","a":"Carlos Monge / Mariano Salazar","b":"Marco Aguilar / Nayib Aguilar"},{"r":2,"h":"14:20","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Carlos Monge / Mariano Salazar"},{"r":2,"h":"14:20","c":"C4","g":"A","a":"Juanfran Montealegre / Luciano Sif","b":"Marco Aguilar / Nayib Aguilar"},{"r":3,"h":"14:40","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Marco Aguilar / Nayib Aguilar"},{"r":3,"h":"14:40","c":"C4","g":"A","a":"Juanfran Montealegre / Luciano Sif","b":"Carlos Monge / Mariano Salazar"},{"r":4,"h":"15:00","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Brandom Carter / Ale Aguilar"},{"r":4,"h":"15:00","c":"C4","g":"B","a":"Denzell Castro / Ale Morales","b":"Manfred Dorzam / Fede Valera"},{"r":5,"h":"15:20","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Denzell Castro / Ale Morales"},{"r":5,"h":"15:20","c":"C4","g":"B","a":"Brandom Carter / Ale Aguilar","b":"Manfred Dorzam / Fede Valera"},{"r":6,"h":"15:40","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Manfred Dorzam / Fede Valera"},{"r":6,"h":"15:40","c":"C4","g":"B","a":"Brandom Carter / Ale Aguilar","b":"Denzell Castro / Ale Morales"},{"r":7,"h":"16:00","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Carlos Robles / Andrey Morales"},{"r":7,"h":"16:00","c":"C4","g":"C","a":"Jaime Quirós / Luis Vasadre","b":"Charlie Hernández / Ricardo Alvara"},{"r":8,"h":"16:20","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Jaime Quirós / Luis Vasadre"},{"r":8,"h":"16:20","c":"C4","g":"C","a":"Carlos Robles / Andrey Morales","b":"Charlie Hernández / Ricardo Alvara"},{"r":9,"h":"16:40","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Charlie Hernández / Ricardo Alvara"},{"r":9,"h":"16:40","c":"C4","g":"C","a":"Carlos Robles / Andrey Morales","b":"Jaime Quirós / Luis Vasadre"},{"r":10,"h":"17:00","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Fausto Amador / Mario Pacheco"},{"r":10,"h":"17:00","c":"C4","g":"D","a":"Irving Vega / Gilbert","b":"Fabián Brenes / Víctor Wolf"},{"r":11,"h":"17:20","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Irving Vega / Gilbert"},{"r":11,"h":"17:20","c":"C4","g":"D","a":"Fausto Amador / Mario Pacheco","b":"Fabián Brenes / Víctor Wolf"},{"r":12,"h":"17:40","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Fabián Brenes / Víctor Wolf"},{"r":12,"h":"17:40","c":"C4","g":"D","a":"Fausto Amador / Mario Pacheco","b":"Irving Vega / Gilbert"}]},"m1":{"groups":{"A":["Vicky / Mariana Galindo","Viviana / Diana Fichman","Lili / Andrea Navarro","Sol Illescas / Adriana Bulgarelli"],"B":["Valeria Di Palma / Carolina Guardia","Jenny Branco / Rose","Fefy Rada / Steph Días"]},"sched":[{"r":1,"h":"14:00","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Viviana / Diana Fichman"},{"r":2,"h":"14:20","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Lili / Andrea Navarro"},{"r":3,"h":"14:40","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Sol Illescas / Adriana Bulgarelli"},{"r":4,"h":"15:00","c":"C5","g":"A","a":"Viviana / Diana Fichman","b":"Lili / Andrea Navarro"},{"r":5,"h":"15:20","c":"C5","g":"A","a":"Viviana / Diana Fichman","b":"Sol Illescas / Adriana Bulgarelli"},{"r":6,"h":"15:40","c":"C5","g":"A","a":"Lili / Andrea Navarro","b":"Sol Illescas / Adriana Bulgarelli"},{"r":7,"h":"16:00","c":"C5","g":"B","a":"Valeria Di Palma / Carolina Guardia","b":"Jenny Branco / Rose"},{"r":8,"h":"16:20","c":"C5","g":"B","a":"Valeria Di Palma / Carolina Guardia","b":"Fefy Rada / Steph Días"},{"r":9,"h":"16:40","c":"C5","g":"B","a":"Jenny Branco / Rose","b":"Fefy Rada / Steph Días"}]},"m2":{"list":["Marce León / Elsa Chavarría","Pamela / amiga","Amanda Caliba / Mariela Arias","Majo Cruz / Maricruz Herrera","Alejandra Prado / Meli Sánchez"],"sched":[{"r":1,"h":"14:00","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Pamela / amiga"},{"r":2,"h":"14:20","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Amanda Caliba / Mariela Arias"},{"r":3,"h":"14:40","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Majo Cruz / Maricruz Herrera"},{"r":4,"h":"15:00","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Alejandra Prado / Meli Sánchez"},{"r":5,"h":"15:20","c":"C6","g":"RR","a":"Pamela / amiga","b":"Amanda Caliba / Mariela Arias"},{"r":6,"h":"15:40","c":"C6","g":"RR","a":"Pamela / amiga","b":"Majo Cruz / Maricruz Herrera"},{"r":7,"h":"16:00","c":"C6","g":"RR","a":"Pamela / amiga","b":"Alejandra Prado / Meli Sánchez"},{"r":8,"h":"16:20","c":"C6","g":"RR","a":"Amanda Caliba / Mariela Arias","b":"Majo Cruz / Maricruz Herrera"},{"r":9,"h":"16:40","c":"C6","g":"RR","a":"Amanda Caliba / Mariela Arias","b":"Alejandra Prado / Meli Sánchez"},{"r":10,"h":"17:00","c":"C6","g":"RR","a":"Majo Cruz / Maricruz Herrera","b":"Alejandra Prado / Meli Sánchez"}]}};
 
@@ -532,38 +556,139 @@ function renderAll() {
 }
 
 
+function checkPassword() {
+  const input = document.getElementById('pwd-input').value.trim();
+  if (input === ADMIN_PASSWORD) {
+    sessionStorage.setItem('invitacional_admin_ok', '1');
+    document.getElementById('config-modal').style.display = 'none';
+    bootAdmin();
+  } else {
+    alert('Contraseña incorrecta');
+  }
+}
+
+function logout() {
+  sessionStorage.removeItem('invitacional_admin_ok');
+  location.reload();
+}
+
 async function fetchResults() {
   if (!GIST_ID || GIST_ID === '1fcd3752fda914967ba4b58630fa46d9') {
     document.getElementById('sync-dot').classList.add('error');
-    document.getElementById('sync-label').textContent = 'Configuración pendiente · ver consola';
-    console.error('GIST_ID no configurado. Edita la línea: const GIST_ID = ...');
+    document.getElementById('sync-label').textContent = 'GIST_ID no configurado';
     return;
   }
   try {
+    document.getElementById('sync-dot').classList.add('loading');
+    document.getElementById('sync-label').textContent = 'Sincronizando...';
     const response = await fetch('https://api.github.com/gists/' + GIST_ID + '?t=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw new Error('HTTP ' + response.status);
     const gist = await response.json();
     const fileName = Object.keys(gist.files)[0];
     const content = gist.files[fileName].content;
-    const parsed = JSON.parse(content);
-    if (parsed.results) state.results = parsed.results;
-    if (parsed.knockout) state.knockout = { ...{ h2: {}, h1: {}, m1: {} }, ...parsed.knockout };
+    if (content && content !== '{}') {
+      const parsed = JSON.parse(content);
+      if (parsed.results) state.results = parsed.results;
+      if (parsed.knockout) state.knockout = { ...{ h2: {}, h1: {}, m1: {} }, ...parsed.knockout };
+    }
     renderAll();
-    document.getElementById('sync-dot').classList.remove('error');
-    document.getElementById('sync-label').textContent = 'Conectado · resultados oficiales en vivo';
+    document.getElementById('sync-dot').classList.remove('error', 'loading');
+    document.getElementById('sync-label').textContent = 'Listo para escribir resultados oficiales';
     const now = new Date();
-    document.getElementById('last-update').textContent = 'Última actualización: ' + 
+    document.getElementById('last-update').textContent = 'Última sync: ' + 
       now.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   } catch (e) {
     document.getElementById('sync-dot').classList.add('error');
-    document.getElementById('sync-label').textContent = 'Error de conexión · reintentando...';
-    console.error('Error fetching gist:', e);
+    document.getElementById('sync-label').textContent = 'Error: ' + e.message;
+    console.error(e);
   }
 }
 
-renderAll();
-fetchResults();
-setInterval(fetchResults, POLL_INTERVAL_MS);
+async function saveResults() {
+  if (saveInFlight) return;
+  saveInFlight = true;
+  try {
+    document.getElementById('sync-dot').classList.add('loading');
+    document.getElementById('sync-label').textContent = 'Guardando en cloud...';
+    const body = {
+      files: {
+        [GIST_FILENAME]: {
+          content: JSON.stringify(state, null, 2)
+        }
+      }
+    };
+    const response = await fetch('https://api.github.com/gists/' + GIST_ID, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': 'Bearer ' + GH_TOKEN,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error('HTTP ' + response.status + ': ' + errText);
+    }
+    document.getElementById('sync-dot').classList.remove('error', 'loading');
+    document.getElementById('sync-label').textContent = '✓ Resultados publicados a todos los usuarios';
+    const now = new Date();
+    document.getElementById('last-update').textContent = 'Último cambio: ' + 
+      now.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  } catch (e) {
+    document.getElementById('sync-dot').classList.add('error');
+    document.getElementById('sync-label').textContent = 'Error al guardar: ' + e.message;
+    console.error(e);
+  } finally {
+    saveInFlight = false;
+  }
+}
+
+function debouncedSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveResults, 800);
+}
+
+function setWinner(cat, idx, winner) {
+  state.results[matchKey(cat, idx)] = winner;
+  renderAll();
+  debouncedSave();
+}
+
+function resetMatch(cat, idx) {
+  delete state.results[matchKey(cat, idx)];
+  renderAll();
+  debouncedSave();
+}
+
+function setKO(cat, slot, winner) {
+  if (!state.knockout[cat]) state.knockout[cat] = {};
+  state.knockout[cat][slot] = winner;
+  renderAll();
+  debouncedSave();
+}
+
+function resetAll() {
+  if (!confirm('¿Resetear TODOS los resultados oficiales? Los usuarios verán el cuadro en blanco.')) return;
+  state = { results: {}, knockout: { h2: {}, h1: {}, m1: {} } };
+  renderAll();
+  saveResults();
+}
+
+function bootAdmin() {
+  renderAll();
+  fetchResults();
+}
+
+if (sessionStorage.getItem('invitacional_admin_ok') === '1') {
+  bootAdmin();
+} else {
+  document.getElementById('config-modal').style.display = 'flex';
+  document.getElementById('pwd-input').focus();
+  document.getElementById('pwd-input').addEventListener('keypress', e => {
+    if (e.key === 'Enter') checkPassword();
+  });
+}
 </script>
 </body>
 </html>
