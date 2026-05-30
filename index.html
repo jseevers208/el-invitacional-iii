@@ -22,7 +22,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-serif; line-height: 1.5; }
 .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
-
 .hero { background: linear-gradient(135deg, var(--ink), #2a2a35); color: var(--cream); padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255,90,60,0.2), transparent 70%); }
 .hero-inner { position: relative; z-index: 2; }
@@ -34,7 +33,6 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .hs .lbl { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase; }
 .hs .num { font-family: 'Anton', sans-serif; font-size: 1.2rem; margin-top: 0.2rem; }
 @media (max-width: 600px) { .hero-stats { grid-template-columns: repeat(2, 1fr); } }
-
 .status-bar { display: flex; gap: 12px; align-items: center; background: white; padding: 10px 14px; border-radius: 8px; margin-bottom: 1rem; font-size: 12px; border: 1px solid var(--line); }
 .status-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; flex-shrink: 0; }
 .status-bar .dot.error { background: var(--red); animation: none; }
@@ -47,10 +45,8 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .btn.danger { color: var(--red); border-color: var(--red); }
 .btn.primary { background: var(--coral); color: white; border-color: var(--coral); }
 .btn.primary:hover { background: #e84e30; }
-
 .admin-banner { background: var(--coral); color: white; padding: 10px 14px; border-radius: 8px; margin-bottom: 1rem; font-size: 12px; display: flex; gap: 10px; align-items: center; }
 .admin-banner strong { font-weight: 600; }
-
 .tabs { display: flex; gap: 4px; margin-bottom: 1rem; flex-wrap: wrap; }
 .tab { background: white; border: 1px solid var(--line); padding: 7px 13px; border-radius: 8px; font-size: 12px; cursor: pointer; color: var(--text-secondary); font-family: inherit; transition: all 0.15s; }
 .tab:hover { background: var(--bg-secondary); }
@@ -61,20 +57,16 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .tab.active[data-tab="m1"] { background: var(--red); }
 .tab.active[data-tab="m2"] { background: #8B6F1E; }
 .tab.active[data-tab="bracket"] { background: var(--coral); }
-
 .section { display: none; background: white; padding: 1.25rem; border-radius: 10px; border: 1px solid var(--line); }
 .section.active { display: block; }
 .cat-head { padding-bottom: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .cat-name { font-size: 16px; font-weight: 500; }
 .cat-sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
-
 .subtabs { display: flex; gap: 4px; margin-bottom: 1rem; flex-wrap: wrap; }
 .subtab { background: var(--bg-secondary); border: 1px solid var(--line); padding: 5px 12px; border-radius: 6px; font-size: 11px; cursor: pointer; color: var(--text-secondary); font-family: inherit; }
 .subtab.active { background: var(--ink); color: white; border-color: var(--ink); }
-
 .sub-section { display: none; }
 .sub-section.active { display: block; }
-
 .grupos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
 .grupo { background: var(--bg-secondary); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
 .grupo-head { display: flex; justify-content: space-between; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
@@ -86,11 +78,9 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .grupo-num.h1 { background: var(--blue); }
 .grupo-num.m1 { background: var(--red); }
 .grupo-num.m2 { background: #8B6F1E; }
-
 .round-row { background: var(--ink); color: var(--cream); padding: 7px 11px; border-radius: 6px; margin: 10px 0 5px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em; align-items: center; }
 .round-row:first-child { margin-top: 0; }
 .round-name { font-weight: 500; }
-
 .match { background: white; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 4px; display: grid; grid-template-columns: 44px 44px 1fr 24px 1fr 28px; gap: 6px; align-items: center; font-size: 12px; }
 .match-court { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--bg-secondary); padding: 3px 6px; border-radius: 4px; text-align: center; }
 .match-group { font-size: 10px; padding: 3px 6px; border-radius: 4px; text-align: center; font-weight: 500; color: white; }
@@ -106,14 +96,12 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .pareja-side.lost { opacity: 0.45; text-decoration: line-through; }
 .match-reset { background: transparent; border: 1px solid var(--line); width: 24px; height: 24px; border-radius: 4px; cursor: pointer; color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; justify-content: center; padding: 0; font-family: inherit; }
 .match-reset:hover { background: var(--bg-secondary); color: var(--red); }
-
 @media (max-width: 600px) {
   .match { grid-template-columns: 1fr 1fr; gap: 4px; padding: 10px; }
   .match-court, .match-group { grid-column: span 1; }
   .match-vs { display: none; }
   .pareja-side, .match-reset { grid-column: 1 / -1; }
 }
-
 .standings { background: var(--bg-secondary); border: 1px solid var(--line); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
 .standings-head { display: flex; justify-content: space-between; padding-bottom: 6px; margin-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 500; }
 .standings-meta { font-size: 10px; color: var(--text-secondary); }
@@ -122,7 +110,6 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .standings-pos.top { background: #E6F7EE; color: var(--green); border-color: var(--green); }
 .standings-stat { text-align: center; font-variant-numeric: tabular-nums; font-size: 11px; color: var(--text-secondary); }
 .standings-team.qualified { font-weight: 500; }
-
 .bracket-box { background: var(--bg-secondary); border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
 .bracket-title { font-size: 14px; font-weight: 500; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 .bracket-stage { display: flex; flex-direction: column; gap: 10px; }
@@ -137,7 +124,6 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .bracket-vs { font-size: 10px; color: var(--text-secondary); text-align: center; padding: 2px 0; }
 .bracket-final { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
 .champ-box { margin-top: 12px; padding: 12px; background: linear-gradient(135deg, var(--green), #169c4f); color: white; border-radius: 8px; text-align: center; font-weight: 500; font-size: 14px; }
-
 .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
 .rule { background: var(--bg-secondary); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
 .rule-lbl { font-size: 10px; letter-spacing: 0.1em; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 4px; }
@@ -150,7 +136,6 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .ko-stage { font-weight: 500; font-size: 12px; }
 .ko-time { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-secondary); margin: 3px 0; }
 .ko-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
-
 .config-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; padding: 1rem; z-index: 100; }
 .config-modal .modal-content { background: white; padding: 1.5rem; border-radius: 12px; max-width: 480px; width: 100%; }
 .config-modal h3 { font-size: 18px; margin-bottom: 8px; }
@@ -158,12 +143,10 @@ body { background: var(--cream); color: var(--ink); font-family: 'Inter', sans-s
 .config-modal input { width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; margin-bottom: 8px; }
 .config-modal label { display: block; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
 .config-modal .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
-
 footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
 </style>
 </head><body>
 <div class="container">
-
 <div class="hero">
   <div class="hero-inner">
     <div class="tag-row">★ Torneo · 30 mayo 2026 · Reserva Club</div>
@@ -177,13 +160,11 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
     </div>
   </div>
 </div>
-
 <div class="status-bar">
   <span class="dot" id="sync-dot"></span>
   <span class="label" id="sync-label">Conectado · resultados oficiales en vivo</span>
   <span class="last-update" id="last-update">--:--:--</span>
 </div>
-
 <div class="tabs">
   <button class="tab active" data-tab="rules" onclick="show('rules')">Reglas</button>
   <button class="tab" data-tab="h2" onclick="show('h2')">H Cat 2</button>
@@ -192,7 +173,6 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   <button class="tab" data-tab="m2" onclick="show('m2')">M Cat 2</button>
   <button class="tab" data-tab="bracket" onclick="show('bracket')">★ Bracket en vivo</button>
 </div>
-
 <div class="section active" id="sec-rules">
   <div class="cat-head"><div class="cat-name">Reglas universales</div><div class="cat-sub">Aplican a las 4 categorías</div></div>
   <div class="rules-grid">
@@ -211,7 +191,6 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
     </div>
   </div>
 </div>
-
 <div class="section" id="sec-h2">
   <div class="cat-head"><div class="cat-name">Hombres Categoría 2 · Avanzado</div><div class="cat-sub">16 parejas · C1+C2 · 4 grupos de 4 · top 1 de cada grupo a semis</div></div>
   <div class="subtabs">
@@ -223,7 +202,6 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   <div class="sub-section" id="sub-h2-sched"></div>
   <div class="sub-section" id="sub-h2-stand"></div>
 </div>
-
 <div class="section" id="sec-h1">
   <div class="cat-head"><div class="cat-name">Hombres Categoría 1 · Recreacional</div><div class="cat-sub">16 parejas · C3+C4 · 4 grupos de 4 · top 1 de cada grupo a semis</div></div>
   <div class="subtabs">
@@ -235,7 +213,6 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   <div class="sub-section" id="sub-h1-sched"></div>
   <div class="sub-section" id="sub-h1-stand"></div>
 </div>
-
 <div class="section" id="sec-m1">
   <div class="cat-head"><div class="cat-name">Mujeres Categoría 1 · Avanzada</div><div class="cat-sub">7 parejas · C5 · 2 grupos (4+3) · top 2 de cada grupo a semis</div></div>
   <div class="subtabs">
@@ -247,7 +224,6 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   <div class="sub-section" id="sub-m1-sched"></div>
   <div class="sub-section" id="sub-m1-stand"></div>
 </div>
-
 <div class="section" id="sec-m2">
   <div class="cat-head"><div class="cat-name">Mujeres Categoría 2 · Recreacional</div><div class="cat-sub">5 parejas · C6 · round-robin completo, sin knockout</div></div>
   <div class="subtabs">
@@ -259,37 +235,28 @@ footer { text-align: center; padding: 1.5rem 0 1rem; color: var(--text-secondary
   <div class="sub-section" id="sub-m2-sched"></div>
   <div class="sub-section" id="sub-m2-stand"></div>
 </div>
-
 <div class="section" id="sec-bracket">
   <div class="cat-head"><div class="cat-name">★ Bracket en vivo · Semifinales y Finales</div><div class="cat-sub">Se llena automáticamente con los #1 de cada grupo</div></div>
   <div id="bracket-content"></div>
 </div>
-
 <footer>El Invitacional III · ONVO · Praga · RAW · Reserva · Heineken · Adán y Eva</footer>
 </div>
 
 <script>
 const IS_ADMIN = false;
-const GIST_ID = '1fcd3752fda914967ba4b58630fa46d9';
+const BIN_ID = '6a1ae76d21f9ee59d29dc5a4';
 const POLL_INTERVAL_MS = 30000;
 
 const DATA = {"h2":{"groups":{"A":["Alejandro Pastora / Pareja","Rodri Madrigas / Nano Clare","Esteban Madrid / Alvaro Pacheco","Marco Gassel / Joao Simoes"],"B":["FJ Temperino / Daniel Victoria","Juan Ocampo / Alvaro Mena","Jean Valverde / Hernán Hernández","Ed Torrentes / JuanMa Alonso"],"C":["Gabo Saborío / Adrián Valverde","Ariel Reifer / Kiko Lang","Pedro Abreu / Jose Muñoz","Alessandro Di Palma / Oliver"],"D":["Daniel Calvosa / Calo Barquero","Paul / Ayax","Tito Chaves / David Valverde","Alberto Dent / Andrés"]},"sched":[{"r":1,"h":"14:00","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Rodri Madrigas / Nano Clare"},{"r":1,"h":"14:00","c":"C2","g":"A","a":"Esteban Madrid / Alvaro Pacheco","b":"Marco Gassel / Joao Simoes"},{"r":2,"h":"14:20","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Esteban Madrid / Alvaro Pacheco"},{"r":2,"h":"14:20","c":"C2","g":"A","a":"Rodri Madrigas / Nano Clare","b":"Marco Gassel / Joao Simoes"},{"r":3,"h":"14:40","c":"C1","g":"A","a":"Alejandro Pastora / Pareja","b":"Marco Gassel / Joao Simoes"},{"r":3,"h":"14:40","c":"C2","g":"A","a":"Rodri Madrigas / Nano Clare","b":"Esteban Madrid / Alvaro Pacheco"},{"r":4,"h":"15:00","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Juan Ocampo / Alvaro Mena"},{"r":4,"h":"15:00","c":"C2","g":"B","a":"Jean Valverde / Hernán Hernández","b":"Ed Torrentes / JuanMa Alonso"},{"r":5,"h":"15:20","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Jean Valverde / Hernán Hernández"},{"r":5,"h":"15:20","c":"C2","g":"B","a":"Juan Ocampo / Alvaro Mena","b":"Ed Torrentes / JuanMa Alonso"},{"r":6,"h":"15:40","c":"C1","g":"B","a":"FJ Temperino / Daniel Victoria","b":"Ed Torrentes / JuanMa Alonso"},{"r":6,"h":"15:40","c":"C2","g":"B","a":"Juan Ocampo / Alvaro Mena","b":"Jean Valverde / Hernán Hernández"},{"r":7,"h":"16:00","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Ariel Reifer / Kiko Lang"},{"r":7,"h":"16:00","c":"C2","g":"C","a":"Pedro Abreu / Jose Muñoz","b":"Alessandro Di Palma / Oliver"},{"r":8,"h":"16:20","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Pedro Abreu / Jose Muñoz"},{"r":8,"h":"16:20","c":"C2","g":"C","a":"Ariel Reifer / Kiko Lang","b":"Alessandro Di Palma / Oliver"},{"r":9,"h":"16:40","c":"C1","g":"C","a":"Gabo Saborío / Adrián Valverde","b":"Alessandro Di Palma / Oliver"},{"r":9,"h":"16:40","c":"C2","g":"C","a":"Ariel Reifer / Kiko Lang","b":"Pedro Abreu / Jose Muñoz"},{"r":10,"h":"17:00","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Paul / Ayax"},{"r":10,"h":"17:00","c":"C2","g":"D","a":"Tito Chaves / David Valverde","b":"Alberto Dent / Andrés"},{"r":11,"h":"17:20","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Tito Chaves / David Valverde"},{"r":11,"h":"17:20","c":"C2","g":"D","a":"Paul / Ayax","b":"Alberto Dent / Andrés"},{"r":12,"h":"17:40","c":"C1","g":"D","a":"Daniel Calvosa / Calo Barquero","b":"Alberto Dent / Andrés"},{"r":12,"h":"17:40","c":"C2","g":"D","a":"Paul / Ayax","b":"Tito Chaves / David Valverde"}]},"h1":{"groups":{"A":["Alonso Cordero / Vega","Juanfran Montealegre / Luciano Sif","Carlos Monge / Mariano Salazar","Marco Aguilar / Nayib Aguilar"],"B":["Luis Chacón / Ricardo Romero","Brandom Carter / Ale Aguilar","Denzell Castro / Ale Morales","Manfred Dorzam / Fede Valera"],"C":["Juan Mora / Gonza Vargas","Carlos Robles / Andrey Morales","Jaime Quirós / Luis Vasadre","Charlie Hernández / Ricardo Alvara"],"D":["Richi / Julián Abreu","Fausto Amador / Mario Pacheco","Irving Vega / Gilbert","Fabián Brenes / Víctor Wolf"]},"sched":[{"r":1,"h":"14:00","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Juanfran Montealegre / Luciano Sif"},{"r":1,"h":"14:00","c":"C4","g":"A","a":"Carlos Monge / Mariano Salazar","b":"Marco Aguilar / Nayib Aguilar"},{"r":2,"h":"14:20","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Carlos Monge / Mariano Salazar"},{"r":2,"h":"14:20","c":"C4","g":"A","a":"Juanfran Montealegre / Luciano Sif","b":"Marco Aguilar / Nayib Aguilar"},{"r":3,"h":"14:40","c":"C3","g":"A","a":"Alonso Cordero / Vega","b":"Marco Aguilar / Nayib Aguilar"},{"r":3,"h":"14:40","c":"C4","g":"A","a":"Juanfran Montealegre / Luciano Sif","b":"Carlos Monge / Mariano Salazar"},{"r":4,"h":"15:00","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Brandom Carter / Ale Aguilar"},{"r":4,"h":"15:00","c":"C4","g":"B","a":"Denzell Castro / Ale Morales","b":"Manfred Dorzam / Fede Valera"},{"r":5,"h":"15:20","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Denzell Castro / Ale Morales"},{"r":5,"h":"15:20","c":"C4","g":"B","a":"Brandom Carter / Ale Aguilar","b":"Manfred Dorzam / Fede Valera"},{"r":6,"h":"15:40","c":"C3","g":"B","a":"Luis Chacón / Ricardo Romero","b":"Manfred Dorzam / Fede Valera"},{"r":6,"h":"15:40","c":"C4","g":"B","a":"Brandom Carter / Ale Aguilar","b":"Denzell Castro / Ale Morales"},{"r":7,"h":"16:00","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Carlos Robles / Andrey Morales"},{"r":7,"h":"16:00","c":"C4","g":"C","a":"Jaime Quirós / Luis Vasadre","b":"Charlie Hernández / Ricardo Alvara"},{"r":8,"h":"16:20","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Jaime Quirós / Luis Vasadre"},{"r":8,"h":"16:20","c":"C4","g":"C","a":"Carlos Robles / Andrey Morales","b":"Charlie Hernández / Ricardo Alvara"},{"r":9,"h":"16:40","c":"C3","g":"C","a":"Juan Mora / Gonza Vargas","b":"Charlie Hernández / Ricardo Alvara"},{"r":9,"h":"16:40","c":"C4","g":"C","a":"Carlos Robles / Andrey Morales","b":"Jaime Quirós / Luis Vasadre"},{"r":10,"h":"17:00","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Fausto Amador / Mario Pacheco"},{"r":10,"h":"17:00","c":"C4","g":"D","a":"Irving Vega / Gilbert","b":"Fabián Brenes / Víctor Wolf"},{"r":11,"h":"17:20","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Irving Vega / Gilbert"},{"r":11,"h":"17:20","c":"C4","g":"D","a":"Fausto Amador / Mario Pacheco","b":"Fabián Brenes / Víctor Wolf"},{"r":12,"h":"17:40","c":"C3","g":"D","a":"Richi / Julián Abreu","b":"Fabián Brenes / Víctor Wolf"},{"r":12,"h":"17:40","c":"C4","g":"D","a":"Fausto Amador / Mario Pacheco","b":"Irving Vega / Gilbert"}]},"m1":{"groups":{"A":["Vicky / Mariana Galindo","Viviana / Diana Fichman","Lili / Andrea Navarro","Sol Illescas / Adriana Bulgarelli"],"B":["Valeria Di Palma / Carolina Guardia","Jenny Branco / Rose","Fefy Rada / Steph Días"]},"sched":[{"r":1,"h":"14:00","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Viviana / Diana Fichman"},{"r":2,"h":"14:20","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Lili / Andrea Navarro"},{"r":3,"h":"14:40","c":"C5","g":"A","a":"Vicky / Mariana Galindo","b":"Sol Illescas / Adriana Bulgarelli"},{"r":4,"h":"15:00","c":"C5","g":"A","a":"Viviana / Diana Fichman","b":"Lili / Andrea Navarro"},{"r":5,"h":"15:20","c":"C5","g":"A","a":"Viviana / Diana Fichman","b":"Sol Illescas / Adriana Bulgarelli"},{"r":6,"h":"15:40","c":"C5","g":"A","a":"Lili / Andrea Navarro","b":"Sol Illescas / Adriana Bulgarelli"},{"r":7,"h":"16:00","c":"C5","g":"B","a":"Valeria Di Palma / Carolina Guardia","b":"Jenny Branco / Rose"},{"r":8,"h":"16:20","c":"C5","g":"B","a":"Valeria Di Palma / Carolina Guardia","b":"Fefy Rada / Steph Días"},{"r":9,"h":"16:40","c":"C5","g":"B","a":"Jenny Branco / Rose","b":"Fefy Rada / Steph Días"}]},"m2":{"list":["Marce León / Elsa Chavarría","Pamela / amiga","Amanda Caliba / Mariela Arias","Majo Cruz / Maricruz Herrera","Alejandra Prado / Meli Sánchez"],"sched":[{"r":1,"h":"14:00","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Pamela / amiga"},{"r":2,"h":"14:20","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Amanda Caliba / Mariela Arias"},{"r":3,"h":"14:40","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Majo Cruz / Maricruz Herrera"},{"r":4,"h":"15:00","c":"C6","g":"RR","a":"Marce León / Elsa Chavarría","b":"Alejandra Prado / Meli Sánchez"},{"r":5,"h":"15:20","c":"C6","g":"RR","a":"Pamela / amiga","b":"Amanda Caliba / Mariela Arias"},{"r":6,"h":"15:40","c":"C6","g":"RR","a":"Pamela / amiga","b":"Majo Cruz / Maricruz Herrera"},{"r":7,"h":"16:00","c":"C6","g":"RR","a":"Pamela / amiga","b":"Alejandra Prado / Meli Sánchez"},{"r":8,"h":"16:20","c":"C6","g":"RR","a":"Amanda Caliba / Mariela Arias","b":"Majo Cruz / Maricruz Herrera"},{"r":9,"h":"16:40","c":"C6","g":"RR","a":"Amanda Caliba / Mariela Arias","b":"Alejandra Prado / Meli Sánchez"},{"r":10,"h":"17:00","c":"C6","g":"RR","a":"Majo Cruz / Maricruz Herrera","b":"Alejandra Prado / Meli Sánchez"}]}};
-
 let state = { results: {}, knockout: { h2: {}, h1: {}, m1: {} } };
-
 function matchKey(cat, idx) { return cat + '_' + idx; }
-
-function escapeQuotes(str) {
-  return str.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, '&quot;');
-}
-
+function escapeQuotes(str) { return str.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
 function show(tabId) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
   document.getElementById('sec-' + tabId).classList.add('active');
 }
-
 function showSub(cat, sub) {
   const parent = document.getElementById('sec-' + cat);
   parent.querySelectorAll('.subtab').forEach(s => s.classList.remove('active'));
@@ -297,7 +264,6 @@ function showSub(cat, sub) {
   parent.querySelector('[onclick*="\'' + sub + '\'"]').classList.add('active');
   document.getElementById('sub-' + cat + '-' + sub).classList.add('active');
 }
-
 function computeStandings(cat) {
   const catData = DATA[cat];
   const groups = catData.groups || { RR: catData.list };
@@ -318,7 +284,6 @@ function computeStandings(cat) {
   Object.values(standings).forEach(arr => arr.sort((a,b) => b.wins - a.wins));
   return standings;
 }
-
 function renderGroups(cat) {
   const mount = document.getElementById('sub-' + cat + '-groups');
   if (!mount) return;
@@ -344,7 +309,6 @@ function renderGroups(cat) {
   html += '</div>';
   mount.innerHTML = html;
 }
-
 function renderSchedule(cat) {
   const mount = document.getElementById('sub-' + cat + '-sched');
   if (!mount) return;
@@ -380,7 +344,6 @@ function renderSchedule(cat) {
   });
   mount.innerHTML = html;
 }
-
 function renderStandings(cat) {
   const mount = document.getElementById('sub-' + cat + '-stand');
   if (!mount) return;
@@ -408,7 +371,6 @@ function renderStandings(cat) {
   });
   mount.innerHTML = html;
 }
-
 function getQualifiers(cat) {
   const standings = computeStandings(cat);
   if (cat === 'm1') {
@@ -428,7 +390,6 @@ function getQualifiers(cat) {
   });
   return result;
 }
-
 function renderBracketSection(cat, title, structure) {
   const q = getQualifiers(cat);
   const ko = state.knockout[cat] || {};
@@ -491,7 +452,6 @@ function renderBracketSection(cat, title, structure) {
   html += '</div></div>';
   return html;
 }
-
 function renderBracket() {
   const mount = document.getElementById('bracket-content');
   if (!mount) return;
@@ -521,7 +481,6 @@ function renderBracket() {
   html += '</div>';
   mount.innerHTML = html;
 }
-
 function renderAll() {
   ['h2','h1','m1','m2'].forEach(c => {
     renderGroups(c);
@@ -531,36 +490,33 @@ function renderAll() {
   renderBracket();
 }
 
-
 async function fetchResults() {
-  if (!GIST_ID || GIST_ID === '__GIST_ID__') {
+  if (!BIN_ID || BIN_ID === '__' + 'BIN_ID' + '__') {
     document.getElementById('sync-dot').classList.add('error');
-    document.getElementById('sync-label').textContent = 'Configuración pendiente · ver consola';
-    console.error('GIST_ID no configurado. Edita la línea: const GIST_ID = ...');
+    document.getElementById('sync-label').textContent = 'Configuración pendiente';
     return;
   }
   try {
-    const response = await fetch('https://api.github.com/gists/' + GIST_ID + '?t=' + Date.now(), { cache: 'no-store' });
+    const response = await fetch('https://api.jsonbin.io/v3/b/' + BIN_ID + '/latest?_t=' + Date.now(), {
+      cache: 'no-store',
+      headers: { 'X-Bin-Meta': 'false' }
+    });
     if (!response.ok) throw new Error('HTTP ' + response.status);
-    const gist = await response.json();
-    const fileName = Object.keys(gist.files)[0];
-    const content = gist.files[fileName].content;
-    const parsed = JSON.parse(content);
-    if (parsed.results) state.results = parsed.results;
-    if (parsed.knockout) state.knockout = { ...{ h2: {}, h1: {}, m1: {} }, ...parsed.knockout };
+    const data = await response.json();
+    if (data.results) state.results = data.results;
+    if (data.knockout) state.knockout = { h2: {}, h1: {}, m1: {}, ...data.knockout };
     renderAll();
     document.getElementById('sync-dot').classList.remove('error');
     document.getElementById('sync-label').textContent = 'Conectado · resultados oficiales en vivo';
     const now = new Date();
-    document.getElementById('last-update').textContent = 'Última actualización: ' + 
+    document.getElementById('last-update').textContent = 'Última actualización: ' +
       now.toLocaleTimeString('es-CR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   } catch (e) {
     document.getElementById('sync-dot').classList.add('error');
     document.getElementById('sync-label').textContent = 'Error de conexión · reintentando...';
-    console.error('Error fetching gist:', e);
+    console.error('Error fetching:', e);
   }
 }
-
 renderAll();
 fetchResults();
 setInterval(fetchResults, POLL_INTERVAL_MS);
