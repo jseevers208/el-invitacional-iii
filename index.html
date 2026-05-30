@@ -533,7 +533,7 @@ function renderAll() {
 
 
 async function fetchResults() {
-  if (!GIST_ID || GIST_ID === '1fcd3752fda914967ba4b58630fa46d9') {
+  if (!GIST_ID || GIST_ID === '__GIST_ID__') {
     document.getElementById('sync-dot').classList.add('error');
     document.getElementById('sync-label').textContent = 'Configuración pendiente · ver consola';
     console.error('GIST_ID no configurado. Edita la línea: const GIST_ID = ...');
